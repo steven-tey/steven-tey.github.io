@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sleek Domains - Daily newsletter of brandable domains</title>
+        <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static',filename='assets/logo.svg') }}"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static',filename='assets/logo.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static',filename='assets/logo.png') }}">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--  Essential META Tags -->
+
+        <meta itemprop="name" content="Sleek Domains - Daily newsletter of brandable domains">
+        <meta itemprop="description" content="Sleek Domains is a daily newsletter of hand-picked domains delivered straight to your inbox.">
+        <meta itemprop="image" content="{{ url_for('static',filename='assets/thumbnail.png') }}">
+        <meta name="description" content="Sleek Domains is a daily newsletter of hand-picked domains delivered straight to your inbox.">
+        <meta property="og:title" content="Sleek Domains - Daily newsletter of brandable domains">
+        <meta property="og:description" content="Sleek Domains is a daily newsletter of hand-picked domains delivered straight to your inbox.">
+        <meta property="og:image" content="{{ url_for('static',filename='assets/thumbnail.png') }}">
+        <meta property="og:url" content="https://www.sleek.domains/subscribed">
+        <meta property="og:type" content="website">
+
+
+        <!--  Non-Essential, But Recommended -->
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@SleekDomains" />
+        <meta name="twitter:creator" content="@Vinrob">
+        <meta name="twitter:title" content="Sleek Domains - Daily newsletter of brandable domains">
+        <meta name="twitter:description" content="Sleek Domains is a daily newsletter of hand-picked domains delivered straight to your inbox.">
+        <meta name="twitter:image" content="https://www.sleek.domains/static/assets/thumbnail.png">
+
+        <!--  CSS Stylesheets -->
+        
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/slick.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/slick-theme.css') }}"/>
+        <link rel="stylesheet" href="https://use.typekit.net/qae7fcj.css">
+
+        <!--  JavaScript Stuff -->
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            
+        <style type="text/css">
+
+            html, body {
+                margin:0;
+                padding:0;
+            }
+
+            body {
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            h1, h2, h4 {
+                font-family: soleil,sans-serif;
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            /* main */
+            header {
+                height: 100px;
+                text-align: center;
+            }
+
+            header img {
+                height: 50px; 
+                margin-top: -100px;
+                margin-left: 10%;
+                float: left;
+            }
+
+            header h1 {
+                font-size: calc(30px + 2vw);
+                color: #000;
+                margin-top: 150px;
+                display: block;
+            }
+
+            header h5 {
+                font-size: calc(15px + 0.5vw);
+                font-weight: 400;
+                color: #000;
+                margin-top: -20px
+            }
+
+            header p {
+                font-size: calc(10px + 0.5vw);
+                font-weight: 400;
+                color: #000;
+                opacity: 0.7;
+            }
+            
+            .hamburger { 
+                float: right;
+                margin-right: 10%;
+                margin-left: -15%;
+                top: -85px;
+                display: none;
+                z-index: 99;
+            }
+
+            .hamburger .line{
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+            display: block;
+            margin: 7px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            .hamburger:hover{
+            cursor: pointer;
+            }
+
+            #hamburger-9{
+            position: relative;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            #hamburger-9.is-active{
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            }
+
+            #hamburger-9:before{
+            content: "";
+            position: absolute;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 50px;
+            height: 50px;
+            border: 3px solid transparent;
+            top: calc(50% - 25px);
+            left: calc(50% - 25px);
+            border-radius: 100%;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            #hamburger-9.is-active:before{
+            border: 3px solid #000;
+            }
+
+            #hamburger-9.is-active .line{
+            width: 30px;
+            }
+
+            #hamburger-9.is-active .line:nth-child(2){
+            opacity: 0;
+            }
+
+            #hamburger-9.is-active .line:nth-child(1){
+            -webkit-transform: translateY(10px);
+            -ms-transform: translateY(10px);
+            -o-transform: translateY(10px);
+            transform: translateY(10px);
+            }
+
+            #hamburger-9.is-active .line:nth-child(3){
+            -webkit-transform: translateY(-10px) rotate(90deg);
+            -ms-transform: translateY(-10px) rotate(90deg);
+            -o-transform: translateY(-10px) rotate(90deg);
+            transform: translateY(-10px) rotate(90deg);
+            }
+
+            .mobileMenu{
+                position: fixed; 
+                display: block;
+                margin-top: -50px; 
+                margin-left: -50px; 
+                background-color: #fff; 
+                width: 0%; 
+                height: 0%; 
+                right: -50%; 
+                top: -10%; 
+                border-radius: 50%; 
+                z-index: 9;
+                transition: all .3s ease;
+                visibility: hidden;
+            }
+            .mobileMenu.expanded{
+                width: 200%; 
+                height: 150%; 
+            }
+
+            #header-logo-mobile {
+                display: none;
+            }
+
+            @media screen and (max-width: 642px) {
+                .header-socials{
+                    visibility: hidden;
+                }
+                #header-logo {
+                    display: none;
+                }
+                #header-logo-mobile {
+                    display: block;
+                }
+                .hamburger { 
+                    display: block;
+                }
+                .mobileMenu{
+                    visibility: visible;
+                }
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <!--Header-->
+        <header>
+            <a href="/"><img id="header-logo" src="{{ url_for('static',filename='assets/full_logo.svg') }}"></img></a>
+            <a href="/"><img id="header-logo-mobile" src="{{ url_for('static',filename='assets/logo.svg') }}"></img></a>
+            <div class="hamburger" id="hamburger-9">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <a href="https://twitter.com/SleekDomains" target="_blank"><img  class="header-socials" style="float: right; margin-right: 15%; height: 35px; margin-top: -85px;" src="{{ url_for('static',filename='assets/twitter.svg') }}"></img></a>
+            <a href="mailto:hello@sleek.domains"><img class="header-socials" style="float: right; margin-right: 10%; height: 35px; margin-top: -85px;" src="{{ url_for('static',filename='assets/mail.svg') }}"></img></a>
+            <h1>Oops!</h1>
+            <h5>You have stumbled upon a broken link. Sorry about that! 😥</h5>
+        </header>
+        <div class="mobileMenu">
+            <a href="https://twitter.com/SleekDomains" target="_blank"><img style="display: block; height: 50px; margin-top: 400px; margin-left: 47.5%;" src="{{ url_for('static',filename='assets/twitter.svg') }}"></img></a>
+            <a href="mailto:hello@sleek.domains"><img style="display: block; height: 50px; margin-top: 50px; margin-left: 47.5%;" src="{{ url_for('static',filename='assets/mail.svg') }}"></img></a>
+        </div>
+
+        <center><lottie-player style="display: inline-block; width: 70%; margin-top: 30px;" src="https://assets10.lottiefiles.com/packages/lf20_nucheY.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;"  loop  autoplay></lottie-player></center>
+
+        <!--Footer-->
+        <footer style="background-color: #000; text-align: center; padding-top: 30px; padding-bottom: 50px">
+            <a href="/" style="text-decoration: none;">
+                <img class="footer-logo" src="{{ url_for('static',filename='assets/logo-dark-variant.svg') }}" 
+                    style="text-align: center; height: 60px; margin-top: 50px; margin-bottom: -50px;"></img>
+                <h1 style="text-align: center; color: #fff; padding-top: 50px;">Sleek Domains</h1>
+            </a>
+            <div style="margin-top: 50px;">
+                <a href="https://twitter.com/SleekDomains" target="_blank"><img  class="header-socials" style="display: inline-block; margin-right: 5%; height: 35px;" src="{{ url_for('static',filename='assets/twitter-dark.svg') }}"></img></a>
+                <a href="mailto:hello@sleek.domains"><img class="header-socials" style="display: inline-block; margin-left: 5%; height: 35px;" src="{{ url_for('static',filename='assets/mail-dark.svg') }}"></img></a>     
+            </div>
+            <p style="color: #fff; margin-top: 50px;">Curated by <a href="https://twitter.com/Vinrob" target="_blank" style="color: #fff; text-decoration: none;">@Vinrob</a></p>
+        </footer>
+
+        <script src="{{ url_for('static',filename='script/slick.js') }}" type="text/javascript" charset="utf-8"></script>
+
+        <script>
+            // Hamburger Side Menu
+            $(document).ready(function(){
+                $(".hamburger").click(function(){
+                    $(this).toggleClass("is-active");
+                    $(".mobileMenu").toggleClass("expanded");
+                });
+            });
+
+        </script>
+
+    </body>
+
+</html>

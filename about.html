@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About Me | Steven Tey</title>
+        <link rel="shortcut icon" type="image/x-icon" href="static/assets/logo.svg"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="static/assets/logo.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="static/assets/logo.png">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--  Essential META Tags -->
+
+        <meta itemprop="name" content="About Me | Steven Tey">
+        <meta itemprop="description" content="My personal portfolio website for my not-so-personal endeavors - both as a product owner and a data science student.">
+        <meta itemprop="image" content="static/assets/thumbnail.png">
+        <meta name="description" content="My personal portfolio website for my not-so-personal endeavors - both as a product owner and a data science student.">
+        <meta property="og:title" content="About Me | Steven Tey">
+        <meta property="og:description" content="My personal portfolio website for my not-so-personal endeavors - both as a product owner and a data science student.">
+        <meta property="og:image" content="static/assets/thumbnail.png">
+        <meta property="og:url" content="https://steventey.com/">
+        <meta property="og:type" content="website">
+
+
+        <!--  Non-Essential, But Recommended -->
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@FNTey" />
+        <meta name="twitter:creator" content="@FNTey">
+        <meta name="twitter:title" content="About Me | Steven Tey">
+        <meta name="twitter:description" content="My personal portfolio website for my not-so-personal endeavors - both as a product owner and a data science student.">
+        <meta name="twitter:image" content="https://steventey.com/static/assets/thumbnail.png">
+
+        <!--  CSS Stylesheets -->
+        
+        <link rel="stylesheet" type="text/css" href="static/styles/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="static/styles/slick-theme.css"/>
+        <link rel="stylesheet" href="https://use.typekit.net/qae7fcj.css">
+
+        <!--  JavaScript Stuff -->
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            
+        <style type="text/css">
+
+            html, body {
+                margin:0;
+                padding:0;
+            }
+
+            body {
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            h1, h2, h4 {
+                font-family: soleil,sans-serif;
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            /* main */
+            header {
+                height: 450px;
+                text-align: center;
+            }
+
+            header img {
+                height: 65px; 
+                margin-top: -75px;
+                margin-left: 10%;
+                float: left;
+            }
+
+            h1 {
+                font-size: calc(30px + 2vw);
+                color: #000;
+                margin-top: 150px;
+                display: block;
+                padding-top: 50px;
+            }
+
+            header h5 {
+                font-size: calc(15px + 0.5vw);
+                font-weight: 400;
+                color: #000;
+                margin-top: -20px
+            }
+
+            header p {
+                font-size: calc(10px + 0.5vw);
+                font-weight: 400;
+                color: #000;
+                opacity: 0.7;
+            }
+
+            .emailInput {
+                background-color: #fff;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+                border-radius: 6px;
+                display: inline-flex; 
+                justify-content: space-between;
+                width: 35%;
+                outline: none;
+                overflow: hidden;
+            }
+            .formInputs {
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-size: calc(12px + 0.5vw);
+                margin: 25px;
+                width: 70%;
+                border: none;
+                outline: none;
+            }
+            .formInputs::placeholder {
+                color: #000;
+                opacity: 0.6
+            }
+            .successWords {
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-size: calc(12px + 0.5vw);
+                margin: 25px;
+                width: 100%;
+                color: #000;
+                opacity: 1;
+                border: none;
+                outline: none;
+                display: none;
+                text-align: center;
+            }
+            .subButton {
+                padding: 3% 5%;
+                margin: 10px;
+                cursor: pointer;
+                border: solid 2px #000;
+                border-radius: 10px;
+                outline: none;
+                background-color: #000;
+                color: #fff;
+                font-family: soleil,sans-serif;
+                font-weight: 500; 
+                font-size: calc(12px + 0.5vw);
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+                transition: all 0.4s ease 0s;
+            }
+            .subButton:hover {
+                transform: scale(1.03);
+            }
+            
+            @media screen and (max-width: 1000px) {
+                .emailInput {
+                    display: inline-block;
+                    width: 45%;
+                }
+                .formInputs {
+                    text-align: center;
+                    margin-bottom: 10px;
+                    width: 80%;
+                }
+                .successWords {
+                    width: 90%;
+                }
+                .subButton {
+                    width: 80%;
+                }
+            } @media screen and (max-width: 800px) {
+                .emailInput {
+                    display: inline-block;
+                    width: 60%;
+                }
+            } @media screen and (max-width: 500px) {
+                .emailInput {
+                    display: inline-block;
+                    width: 80%;
+                }
+                .successWords {
+                    width: 85%;
+                }
+            }
+            .hamburger { 
+                float: right;
+                margin-right: 10%;
+                margin-left: -15%;
+                top: -85px;
+                display: none;
+                z-index: 99;
+            }
+
+            .hamburger .line{
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+            display: block;
+            margin: 7px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            .hamburger:hover{
+            cursor: pointer;
+            }
+
+            #hamburger-9{
+            position: relative;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            #hamburger-9.is-active{
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            }
+
+            #hamburger-9:before{
+            content: "";
+            position: absolute;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 50px;
+            height: 50px;
+            border: 3px solid transparent;
+            top: calc(50% - 25px);
+            left: calc(50% - 25px);
+            border-radius: 100%;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            #hamburger-9.is-active:before{
+            border: 3px solid #000;
+            }
+
+            #hamburger-9.is-active .line{
+            width: 30px;
+            }
+
+            #hamburger-9.is-active .line:nth-child(2){
+            opacity: 0;
+            }
+
+            #hamburger-9.is-active .line:nth-child(1){
+            -webkit-transform: translateY(10px);
+            -ms-transform: translateY(10px);
+            -o-transform: translateY(10px);
+            transform: translateY(10px);
+            }
+
+            #hamburger-9.is-active .line:nth-child(3){
+            -webkit-transform: translateY(-10px) rotate(90deg);
+            -ms-transform: translateY(-10px) rotate(90deg);
+            -o-transform: translateY(-10px) rotate(90deg);
+            transform: translateY(-10px) rotate(90deg);
+            }
+
+            .mobileMenu{
+                position: fixed; 
+                display: block;
+                margin-top: -50px; 
+                margin-left: -50px; 
+                background-color: #fff; 
+                width: 0%; 
+                height: 0%; 
+                right: -50%; 
+                top: -10%; 
+                border-radius: 50%; 
+                z-index: 9;
+                transition: all .3s ease;
+                visibility: hidden;
+            }
+            .mobileMenu.expanded{
+                width: 200%; 
+                height: 150%; 
+            }
+
+            #header-logo-mobile {
+                display: none;
+            }
+
+            .mobile-card {
+                display: none;
+            }
+
+            .row {
+                padding: 50px;
+                background-color: #fff; 
+                display: flex;
+            }
+            .columnSmall {
+                flex: 35%;
+                padding: 5%;
+                margin: auto;
+                text-align: right;
+            }
+            .columnLarge {
+                flex: 65%;
+                padding: 5%;
+            }
+            .demoCard {
+                overflow: hidden;
+                filter: drop-shadow( 0px 0px 10px rgba(0, 0, 0, .2));
+                border-radius: 20px;
+                cursor: pointer;
+                width: 100%;
+            }
+
+            @media screen and (max-width: 1000px) {
+                .header-socials{
+                    visibility: hidden;
+                }
+                #header-logo {
+                    display: none;
+                }
+                #header-logo-mobile {
+                    display: block;
+                }
+                .hamburger { 
+                    display: block;
+                }
+                .mobileMenu{
+                    visibility: visible;
+                }
+                .mobile-card{
+                    display: block
+                }
+                .row{
+                    flex-wrap: wrap;
+                }
+            }
+
+            ul.features {
+                text-align: left; 
+                margin: 30px 10% 50px 10%;
+            }
+
+            ul.features > li {
+                margin-bottom: 20px;
+                padding-left: 15%;
+                margin-left: -25%;
+                list-style: none;
+                background-repeat: no-repeat;
+                background-position: left right;
+                background-size: 22px;
+                color: #fff;
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-size: calc(12px + 0.5vw);
+                background-image: url(static/assets/check-top.svg);
+            }
+
+            .slider {
+                width: 60%;
+                margin: 100px auto 50px auto;
+                padding: 50px auto;
+            }
+            .slick-prev:before,
+            .slick-next:before {
+                color: black;
+            }
+            .slick-slide {
+            transition: all ease-in-out .3s;
+                opacity: .2;
+            }
+            .slick-active {
+                opacity: .5;
+                transform: scale(1.05);
+            }
+            .slick-current {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            .testimonial {
+                max-width: 60%;
+                padding: 10px 10% 10px 10%; 
+                margin: 30px 10% 50px 10%; 
+                text-align: center;
+                outline: none;
+                overflow: hidden;
+            }
+            .testimonial h2 {
+                font-size: calc(15px + 0.5vw);
+            }
+            .mobile-words {
+                    display: none;
+                }
+            @media screen and (max-width: 642px) {
+                .slider{
+                    width: 80%;
+                }
+                .testimonial {
+                    max-width: 80%;        
+                    padding: 10px 5% 10px 5%; 
+                    margin: 30px 5% 50px 5%; 
+                }
+                .desktop-words {
+                    display: none;
+                }
+                .mobile-words {
+                    display: block;
+                }
+            }
+
+            .scrollDown {
+                display: block;
+                margin-top: 100px;
+                float: none; 
+                margin-left: 0;
+                cursor: pointer;
+                transition: all 0.3s ease 0s;
+            }
+            .scrollDown:hover {
+                transform: scale(1.1);
+            }
+
+            .image-float{
+                transition: all 0.3s ease 0s;
+            }
+            .image-float:hover {
+                transform: scale(1.1);
+            }
+            br {
+                display: block;
+                margin: 20px 0;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <!--Header-->
+        <header>
+            <a href="/"><img class="image-float" id="header-logo" src="static/assets/logo.svg"></img></a>
+            <a href="/"><img id="header-logo-mobile" style="margin-top: -100px" src="static/assets/logo.svg"></img></a>
+            <div class="hamburger" id="hamburger-9">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <a href="https://twitter.com/FNTey" target="_blank"><img class="header-socials image-float" style="float: right; margin-right: 25%; height: 35px; margin-top: -70px;" src="static/assets/twitter.svg"></img></a>
+            <a href="https://www.linkedin.com/in/steventey/" target="_blank"><img  class="header-socials image-float" style="float: right; margin-right: 20%; height: 35px; margin-top: -70px;" src="static/assets/linkedin.svg"></img></a>
+            <a href="mailto:steven@oneword.domains"><img class="header-socials image-float" style="float: right; margin-right: 15%; height: 35px; margin-top: -70px;" src="static/assets/mail.svg"></img></a>
+            <a href="about"><img class="header-socials image-float" style="float: right; margin-right: 10%; border-radius: 50%; height: 30px; margin-top: -70px; border: 3px solid #000" src="static/assets/me.jpg"/></a>
+
+            <h1 class="desktop-words">About Me</h1>
+            <h1 class="mobile-words">About Me</h1>
+        </header>
+        <div class="mobileMenu">
+            <a href="https://twitter.com/FNTey" target="_blank"><img style="display: block; height: 50px; margin-top: 300px; margin-left: 47.5%;" src="static/assets/twitter.svg"></img></a>
+            <a href="https://www.linkedin.com/in/steventey/" target="_blank"><img style="display: block; height: 50px; margin-top: 50px; margin-left: 47.5%;" src="static/assets/linkedin.svg"></img></a>
+            <a href="mailto:steven@oneword.domains"><img style="display: block; height: 50px; margin-top: 50px; margin-left: 47.5%;" src="static/assets/mail.svg"></img></a>
+            <a href="about"><img style="display: block; height: 50px; margin-top: 50px; margin-left: 47.5%; border-radius: 50%; border: 3px solid #000" src="static/assets/me.jpg"/></a>
+        </div>
+
+        <section style="margin-top: -250px; margin-bottom: 100px">
+            <center><div style="width: 100%; margin-left: auto; margin-right: auto">
+                <img style="display: block; width: calc(200px + 5vw); border-radius: 50%; border: 10px solid #000; margin-bottom: 30px" src="static/assets/me.jpg"/>
+                
+                <p style="width: calc(300px + 15vw); font-size: calc(15px + 0.5vw);">
+                    <br>Hey there! My name is Steven Tey. Originally from Malaysia, I'm currently in my senior year at <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.minerva.kgi.edu/" target="_blank">Minerva</a>, where I major in data science and brand management.</br>
+                    <br>I am passionate about building products that make a positive impact on people's lives.</br>
+                    <br>When I was 19, I published a <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.amazon.com/Someones-Head-Wickernham-Trilogy-Book-ebook/dp/B015898UUE" target="_blank">book</a> that sold over 1.5K copies nationwide and went on to win various <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.thestar.com.my/lifestyle/culture/2016/01/11/local-author-steven-steel-picks-up-a-prize-in-the-worlds-largest-online-writing-competition" target="_blank">international</a> and <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.star2.com/culture/books/book-news/2017/07/04/popular-the-star-readers-choice-awards-2017-science-for-the-win/" target="_blank">national</a> awards. It now has over <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.wattpad.com/story/42802547-someone%27s-in-my-head-wattys-award-winner-2015" target="_blank">850K reads on Wattpad</a>.</br>
+                    <br>This summer (2020), I built a <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.oneword.domains/" target="_blank">SaaS</a> that got to <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.producthunt.com/posts/one-word-domains" target="_blank">#2 on Product Hunt</a> and the <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://news.ycombinator.com/item?id=23291337" target="_blank">front page of Hacker News</a>. It currently has 3K MAU and is generating around $3.5K in MRR, with a churn rate of just below 5%. If you're interested, here's a <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://hackernoon.com/how-a-week-long-project-took-me-to-2-on-product-hunt-and-the-front-page-of-hacker-news-2ir3y16" target="_blank">Hackernoon article</a> detailing my experience.</br>
+                    <br>In the past, I've been the product owner at various tech startups in <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="noodle-partners">New York</a>, Berlin, and <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.minerva.kgi.edu/career-development/case-studies-dbay-and-hitomedia/" target="_blank">Tokyo</a>, specifically in the EdTech, HealthTech and blockchain industries.</br>
+                    <br>Other things I love include running, <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.youtube.com/playlist?list=PLUYAL49I5h5mZqe8euaKJSVclteJKREAW" target="_blank">music</a>, <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.youtube.com/playlist?list=PLUYAL49I5h5lxDgiTEW3nqSUdhekVu2oE" target="_blank">filmmaking</a>, and reading (I'm aiming to read at least one book every month, and for this month it's Ray Dalio's <a style="font-style: italic; text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.principles.com/" target="_blank">Principles</a>).</br>
+                    <br>I'm always open to exciting new projects, so if you are currently working on one, feel free to reach out on <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://twitter.com/FNTey" target="_blank">Twitter</a> or via <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="mailto:steven@oneword.domains">email</a>.</br>
+                </p>
+
+                <h2 style="font-size: calc(20px + 1.5vw); margin: 150px auto 50px auto">Join My Newsletter</h2>
+                <form class="emailInput" action="https://kgi.us17.list-manage.com/subscribe/post?u=bdb1d7b2b818bc1443dd9d193&amp;id=283a306153" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                    <input class="formInputs" name="EMAIL" id="mce-EMAIL" type="email" required placeholder="panic@thedis.co">
+                    <button class="subButton" type="submit" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
+                    <p class="successWords">Awesome! Don't forget to check your email to confirm your subscription! 🎉</p>
+                </form>
+                <p style="width: 60%">Receive my occasional musings on tech, product and data</p>
+            </div></center>
+        </section>
+
+        <!--Footer-->
+        <footer style="background-color: #fff; text-align: center; padding-top: 50px; padding-bottom: 50px; border-top: solid 1px rgba(0, 0, 0, 0.5)">
+            <div style="justify-content: center;">
+                <a href="https://twitter.com/FNTey" target="_blank"><img class="image-float" style="display: inline-block; margin: auto 2%; height: 35px;" src="static/assets/twitter.svg"></img></a>
+                <a href="https://www.linkedin.com/in/steventey/" target="_blank"><img class="image-float" style="display: inline-block; margin: auto 2%; height: 35px;" src="static/assets/linkedin.svg"></img></a>
+                <a href="/"><img class="image-float" style="display: inline-block; margin: auto 3.5% -10px 3.5%; height: 75px;" src="static/assets/logo.svg"></img></a>
+                <a href="mailto:steven@oneword.domains"><img class="image-float" style="display: inline-block; margin: auto 2%; height: 35px;" src="static/assets/mail.svg"></img></a>
+                <a href="about"><img class="image-float" style="display: inline-block; margin: -3px 2% auto 2%; height: 30px; border-radius: 50%; border: 3px solid #000" src="static/assets/me.jpg"/></a> 
+            </div>
+        </footer>
+
+        <script>
+
+            // Hamburger Side Menu
+            $(document).ready(function(){
+                $(".hamburger").click(function(){
+                    $(this).toggleClass("is-active");
+                    $(".mobileMenu").toggleClass("expanded");
+                });
+            });
+
+            const button = document.querySelector('.subButton');
+            button.addEventListener('click', event => {
+                $(".formInputs").css({"display": "none"})
+                $(".subButton").css({"display": "none"})
+                $(".successWords").css({"display": "block"})
+            });
+
+        </script>
+
+    </body>
+
+</html>

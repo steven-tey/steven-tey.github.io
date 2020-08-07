@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sedge | Steven Tey</title>
+        <link rel="shortcut icon" type="image/x-icon" href="static/assets/logo.svg"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="static/assets/logo.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="static/assets/logo.png">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--  Essential META Tags -->
+
+        <meta itemprop="name" content="Sedge | Steven Tey">
+        <meta itemprop="description" content="In the Fall of 2019, I attempted to build a music-tech startup to help music producers collaborate better. This is my story.">
+        <meta itemprop="image" content="static/assets/sedge.png">
+        <meta name="description" content="In the Fall of 2019, I attempted to build a music-tech startup to help music producers collaborate better. This is my story.">
+        <meta property="og:title" content="Sedge | Steven Tey">
+        <meta property="og:description" content="In the Fall of 2019, I attempted to build a music-tech startup to help music producers collaborate better. This is my story.">
+        <meta property="og:image" content="static/assets/sedge.png">
+        <meta property="og:url" content="https://steventey.com/">
+        <meta property="og:type" content="website">
+
+
+        <!--  Non-Essential, But Recommended -->
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@FNTey" />
+        <meta name="twitter:creator" content="@FNTey">
+        <meta name="twitter:title" content="Sedge | Steven Tey">
+        <meta name="twitter:description" content="In the Fall of 2019, I attempted to build a music-tech startup to help music producers collaborate better. This is my story.">
+        <meta name="twitter:image" content="https://steventey.com/static/assets/sedge.png">
+
+        <!--  CSS Stylesheets -->
+        
+        <link rel="stylesheet" type="text/css" href="static/styles/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="static/styles/slick-theme.css"/>
+        <link rel="stylesheet" href="https://use.typekit.net/qae7fcj.css">
+
+        <!--  JavaScript Stuff -->
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            
+        <style type="text/css">
+
+            html, body {
+                margin:0;
+                padding:0;
+            }
+
+            body {
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            h1, h2, h4 {
+                font-family: soleil,sans-serif;
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            /* main */
+            header {
+                height: 550px;
+                text-align: center;
+            }
+
+            header img {
+                height: 65px; 
+                margin-top: -75px;
+                margin-left: 10%;
+                float: left;
+            }
+
+            h1 {
+                font-size: calc(30px + 2vw);
+                color: #000;
+                margin-top: 150px;
+                display: block;
+                padding-top: 50px;
+            }
+
+            header h5 {
+                font-size: calc(15px + 0.5vw);
+                font-weight: 400;
+                color: #000;
+                margin-top: -20px
+            }
+
+            header p {
+                font-size: calc(10px + 0.5vw);
+                font-weight: 400;
+                color: #000;
+                opacity: 0.7;
+            }
+
+            .emailInput {
+                background-color: #fff;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+                border-radius: 6px;
+                display: inline-flex; 
+                justify-content: space-between;
+                width: 35%;
+                outline: none;
+                overflow: hidden;
+            }
+            .formInputs {
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-size: calc(12px + 0.5vw);
+                margin: 25px;
+                width: 70%;
+                border: none;
+                outline: none;
+            }
+            .formInputs::placeholder {
+                color: #000;
+                opacity: 0.6
+            }
+            .successWords {
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-size: calc(12px + 0.5vw);
+                margin: 25px;
+                width: 100%;
+                color: #000;
+                opacity: 1;
+                border: none;
+                outline: none;
+                display: none;
+                text-align: center;
+            }
+            .subButton {
+                padding: 3% 5%;
+                margin: 10px;
+                cursor: pointer;
+                border: solid 2px #000;
+                border-radius: 10px;
+                outline: none;
+                background-color: #000;
+                color: #fff;
+                font-family: soleil,sans-serif;
+                font-weight: 500; 
+                font-size: calc(12px + 0.5vw);
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+                transition: all 0.4s ease 0s;
+            }
+            .subButton:hover {
+                transform: scale(1.03);
+            }
+            
+            @media screen and (max-width: 1000px) {
+                .emailInput {
+                    display: inline-block;
+                    width: 45%;
+                }
+                .formInputs {
+                    text-align: center;
+                    margin-bottom: 10px;
+                    width: 80%;
+                }
+                .successWords {
+                    width: 90%;
+                }
+                .subButton {
+                    width: 80%;
+                }
+            } @media screen and (max-width: 800px) {
+                .emailInput {
+                    display: inline-block;
+                    width: 60%;
+                }
+            } @media screen and (max-width: 500px) {
+                .emailInput {
+                    display: inline-block;
+                    width: 80%;
+                }
+                .successWords {
+                    width: 85%;
+                }
+            }
+            .hamburger { 
+                float: right;
+                margin-right: 10%;
+                margin-left: -15%;
+                top: -85px;
+                display: none;
+                z-index: 99;
+            }
+
+            .hamburger .line{
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+            display: block;
+            margin: 7px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            .hamburger:hover{
+            cursor: pointer;
+            }
+
+            #hamburger-9{
+            position: relative;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            #hamburger-9.is-active{
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            }
+
+            #hamburger-9:before{
+            content: "";
+            position: absolute;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 50px;
+            height: 50px;
+            border: 3px solid transparent;
+            top: calc(50% - 25px);
+            left: calc(50% - 25px);
+            border-radius: 100%;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            #hamburger-9.is-active:before{
+            border: 3px solid #000;
+            }
+
+            #hamburger-9.is-active .line{
+            width: 30px;
+            }
+
+            #hamburger-9.is-active .line:nth-child(2){
+            opacity: 0;
+            }
+
+            #hamburger-9.is-active .line:nth-child(1){
+            -webkit-transform: translateY(10px);
+            -ms-transform: translateY(10px);
+            -o-transform: translateY(10px);
+            transform: translateY(10px);
+            }
+
+            #hamburger-9.is-active .line:nth-child(3){
+            -webkit-transform: translateY(-10px) rotate(90deg);
+            -ms-transform: translateY(-10px) rotate(90deg);
+            -o-transform: translateY(-10px) rotate(90deg);
+            transform: translateY(-10px) rotate(90deg);
+            }
+
+            .mobileMenu{
+                position: fixed; 
+                display: block;
+                margin-top: -50px; 
+                margin-left: -50px; 
+                background-color: #fff; 
+                width: 0%; 
+                height: 0%; 
+                right: -50%; 
+                top: -10%; 
+                border-radius: 50%; 
+                z-index: 9;
+                transition: all .3s ease;
+                visibility: hidden;
+            }
+            .mobileMenu.expanded{
+                width: 200%; 
+                height: 150%; 
+            }
+
+            #header-logo-mobile {
+                display: none;
+            }
+
+            .mobile-card {
+                display: none;
+            }
+
+            .row {
+                padding: 50px;
+                background-color: #fff; 
+                display: flex;
+            }
+            .columnSmall {
+                flex: 35%;
+                padding: 5%;
+                margin: auto;
+                text-align: right;
+            }
+            .columnLarge {
+                flex: 65%;
+                padding: 5%;
+            }
+            .demoCard {
+                overflow: hidden;
+                filter: drop-shadow( 0px 0px 10px rgba(0, 0, 0, .2));
+                border-radius: 20px;
+                cursor: pointer;
+                width: 100%;
+            }
+
+            @media screen and (max-width: 1000px) {
+                .header-socials{
+                    visibility: hidden;
+                }
+                #header-logo {
+                    display: none;
+                }
+                #header-logo-mobile {
+                    display: block;
+                }
+                .hamburger { 
+                    display: block;
+                }
+                .mobileMenu{
+                    visibility: visible;
+                }
+                .mobile-card{
+                    display: block
+                }
+                .row{
+                    flex-wrap: wrap;
+                }
+            }
+
+            ul.features {
+                text-align: left; 
+                margin: 30px 10% 50px 10%;
+            }
+
+            ul.features > li {
+                margin-bottom: 20px;
+                padding-left: 15%;
+                margin-left: -25%;
+                list-style: none;
+                background-repeat: no-repeat;
+                background-position: left right;
+                background-size: 22px;
+                color: #fff;
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-size: calc(12px + 0.5vw);
+                background-image: url(static/assets/check-top.svg);
+            }
+
+            .slider {
+                width: 60%;
+                margin: 100px auto 50px auto;
+                padding: 50px auto;
+            }
+            .slick-prev:before,
+            .slick-next:before {
+                color: black;
+            }
+            .slick-slide {
+            transition: all ease-in-out .3s;
+                opacity: .2;
+            }
+            .slick-active {
+                opacity: .5;
+                transform: scale(1.05);
+            }
+            .slick-current {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            .testimonial {
+                max-width: 60%;
+                padding: 10px 10% 10px 10%; 
+                margin: 30px 10% 50px 10%; 
+                text-align: center;
+                outline: none;
+                overflow: hidden;
+            }
+            .testimonial h2 {
+                font-size: calc(15px + 0.5vw);
+            }
+            .mobile-words {
+                    display: none;
+                }
+            @media screen and (max-width: 642px) {
+                .slider{
+                    width: 80%;
+                }
+                .testimonial {
+                    max-width: 80%;        
+                    padding: 10px 5% 10px 5%; 
+                    margin: 30px 5% 50px 5%; 
+                }
+                .desktop-words {
+                    display: none;
+                }
+                .mobile-words {
+                    display: block;
+                }
+                header {
+                    height: 475px;
+                }
+            }
+
+            .scrollDown {
+                display: block;
+                margin-top: 100px;
+                float: none; 
+                margin-left: 0;
+                cursor: pointer;
+                transition: all 0.3s ease 0s;
+            }
+            .scrollDown:hover {
+                transform: scale(1.1);
+            }
+
+            .image-float{
+                transition: all 0.3s ease 0s;
+            }
+            .image-float:hover {
+                transform: scale(1.1);
+            }
+
+            br {
+                display: block;
+                margin: 20px 0;
+            }
+
+            .iframe-container{
+                position: relative;
+                width: 60%;
+                border-radius: 20px; 
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); 
+                padding-bottom: 35%; 
+                overflow: hidden;
+                height: 0;
+            }
+            .iframe-container iframe{
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .emoji {
+            padding: 3rem;
+            font-size: 4rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,.3);
+            transition: 
+                text-shadow .2s ease-in-out,
+                transform .2s ease-in-out;
+            cursor: pointer;
+            }
+
+            .emoji:hover {
+                transform: scale(1.5);
+                text-shadow: 0 20px 20px rgba(0,0,0,.3);
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <!--Header-->
+        <header>
+            <a href="/"><img class="image-float" id="header-logo" src="static/assets/logo.svg"></img></a>
+            <a href="/"><img id="header-logo-mobile" style="margin-top: -100px" src="static/assets/logo.svg"></img></a>
+            <div class="hamburger" id="hamburger-9">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <a href="https://twitter.com/FNTey" target="_blank"><img class="header-socials image-float" style="float: right; margin-right: 25%; height: 35px; margin-top: -70px;" src="static/assets/twitter.svg"></img></a>
+            <a href="https://www.linkedin.com/in/steventey/" target="_blank"><img  class="header-socials image-float" style="float: right; margin-right: 20%; height: 35px; margin-top: -70px;" src="static/assets/linkedin.svg"></img></a>
+            <a href="mailto:steven@oneword.domains"><img class="header-socials image-float" style="float: right; margin-right: 15%; height: 35px; margin-top: -70px;" src="static/assets/mail.svg"></img></a>
+            <a href="about"><img class="header-socials image-float" style="float: right; margin-right: 10%; border-radius: 50%; height: 30px; margin-top: -70px; border: 3px solid #000" src="static/assets/me.jpg"/></a>
+
+            <h1 class="desktop-words">Sedge</h1>
+            <h5 class="desktop-words" id="subtitles" style="margin: -25px auto 0px auto">👇 Hover over the emojis below 👇</h5>
+            <span class="emoji desktop-words" id="position">👨‍💻</span>
+            <span class="emoji desktop-words" id="duration">📅</span>
+            <span class="emoji desktop-words" id="location">🌆</span>
+
+            <h1 class="mobile-words">Sedge</h1>
+            <h5 class="mobile-words">
+                👨‍💻 Founder, Full Stack Developer<br>
+                📅 Nov 2019 - Apr 2020<br>
+                🌆 Berlin, Germany<br>
+            </h5>
+        </header>
+        <div class="mobileMenu">
+            <a href="https://twitter.com/FNTey" target="_blank"><img style="display: block; height: 50px; margin-top: 300px; margin-left: 47.5%;" src="static/assets/twitter.svg"></img></a>
+            <a href="https://www.linkedin.com/in/steventey/" target="_blank"><img style="display: block; height: 50px; margin-top: 50px; margin-left: 47.5%;" src="static/assets/linkedin.svg"></img></a>
+            <a href="mailto:steven@oneword.domains"><img style="display: block; height: 50px; margin-top: 50px; margin-left: 47.5%;" src="static/assets/mail.svg"></img></a>
+            <a href="about"><img style="display: block; height: 50px; margin-top: 50px; margin-left: 47.5%; border-radius: 50%; border: 3px solid #000" src="static/assets/me.jpg"/></a>
+        </div>
+
+        <section style="margin-top: -250px; margin-bottom: 100px">
+            <center><div style="width: 100%; margin-left: auto; margin-right: auto">
+                <img style="display: block; width: 70%; border-radius: 30px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin-bottom: 30px" src="static/assets/sedge.png"/>
+                
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">What is Sedge?</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>In the fall of 2019, I set out to build <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.sedge.io/" target="_blank">Sedge</a>, a project management and file-sharing tool to help music producers collaborate more effectively with their clients. While the big picture of the company is to become the Slack/Asana of the music production world, the initial MVP will target the file-sharing/music review process and how to make it more hassle-free.</br>
+                    <br>With Sedge, listeners can comment on tracks without having to make an account, while users can review those comments directly from within their preferred digital audio workstations (DAWs) like Ableton and Bitwig.</br>
+                    <br>Sedge’s Version Control also helps users to keep track of multiple versions of a song, which makes it much more convenient considering the iterative nature of music production.</br>
+                </p>
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">Why Sedge?</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>As a music producer myself, I've always found it difficult to keep track of all my ongoing projects, especially when I was working with multiple clients at once. More specifically, sharing edits with clients and getting their feedback has always been a hassle, given how most music streaming platforms are not exactly designed for feedback collection and producer-artist collaboration.</br>
+                    <br>For example, when my clients leave their feedback as comments on the SoundCloud track that I send them, I have to switch back and forth between Ableton and SoundCloud to incorporate those changes. This gets even more tedious and challenging given that there are no timestamps inside Ableton, only beat counts.</br>
+                    <br>This is just the tip of the iceberg. There are also problems like unclear feedback, lack of a holistic project management system that allows for version control and deadline management, as well as a general disconnect between artists and producers in terms of their workflow. After speaking with a couple of fellow producers, I realized that I wasn't the only one who had these problems - a lot of them told me that this is a huge gap in the world of music production that is in desperate need of a solution. And that's how I came up with Sedge.</br>
+                    <br>Currently, there are a few companies that are doing something similar in the music industry, the most notable of which is Splice - a platform that offers a wide selection of royalty-free samples, loops, and presets for producers to use in their projects. While they do offer a solution for producers to share edits with one another, it is highly technical and sophisticated as it mainly focuses on producer-producer collaboration instead of the more general producer-artist dynamic. To provide an analogy, Splice is to music producers what Github is to programmers, while Sedge aims to bridge the gap between producers and artists the same way Slack and Asana did with programmers and designers.</br>
+                    <br>Therefore, while other companies focus more on file-sharing and simple commenting features, Sedge aims to stand out by drilling down on two very important aspects of the collaborative music production process: </br>
+                </p>
+                <ol style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <li>Effective feedback collection</li>
+                    <li>Collaborative project management</li>
+                </ol>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>At the end of the day, the big picture is for Sedge to become the go-to solution for music producers when they are working with clients/artists.</br>
+                </p>
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">The Design Process</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>The design process can be broken down into two components - journey mapping and prototyping.</br>
+                </p>
+                <p style="width: 60%; text-align: left; font-size: calc(18px + 0.55vw); font-weight: 600; margin: 25px auto -30px auto">Journey Map</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>To better understand the various key moments in the Sedge user experience, I synthesized the whole process of sharing an edit, collecting feedback, and building on that feedback in a user journey map with LucidChart. The journey map details the different stages in the process as well as the user actions, tools used, user emotions and user pain points during each of those stages.</br>
+                    <br>To flesh out the impact the Sedge that is creating on the user, I created two journey maps - the first represents the scenario where the user doesn’t have access to Sedge, while the second one shows the user journey with Sedge in the picture. Below are the diagrams:</br>
+                </p>
+
+                <img style="display: block; width: 60%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/journey_map_no_sedge.jpeg"/>
+                <p style="width: 60%; text-align: center; font-style: italic; font-size: calc(10px + 0.4vw);">User Journey Map of Music Producers Without Sedge</p>
+                
+                <img style="display: block; width: 60%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/journey_map_sedge.jpeg"/>
+                <p style="width: 60%; text-align: center; font-style: italic; font-size: calc(10px + 0.4vw);">User Journey Map of Music Producers With Sedge</p>
+
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>As you can see, the first journey map is rather disjointed, with the workflow split between different file-sharing and communication tools. This inefficient workflow limits the music producer's bandwidth, which reduces the number of projects that they can take on at a given time. This translates to lower profits, which is not ideal especially if the user is a burgeoning producer trying to make ends meet.</br> 
+                    <br>On the other hand, the second journey map is much more streamlined, with Sedge acting as the single one-stop platform for producers to get the quality feedback that they need. With Sedge, there is no need for the producer to switch back and forth between SoundCloud and their preferred DAW to incorporate the changes specified by their clients.</br> 
+                </p>
+                <p style="width: 60%; text-align: left; font-size: calc(18px + 0.55vw); font-weight: 600; margin: 25px auto -30px auto">Prototyping</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>I started out by prototyping with pen and paper, since it is evident that by visualizing our thoughts on paper, we are able to free up a sizeable amount of mental space that will allow us to “evaluate variations and further develop our ideas” (<a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.qiqixu.co/projects/aerolab" target="_blank">Xu, 2017</a>). By starting with the lowest-fidelity wireframes, I was able to identify the most important information that had to be conveyed - something that might not be easy to achieve at a higher level.</br> 
+                </p>
+                <img style="display: block; width: 50%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/paper_sketch.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Then, I used Sketch to translate my pen-and-paper sketches into graphic designs. Once again, I started from a lower-fidelity sketch and gradually iterated until I reached a higher fidelity one. For example, here’s the initial sketch that I had for the beat-level commenting feature for Sedge:</br> 
+                </p>
+                <img style="display: block; width: 50%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/lofi_sketch.jpg"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>And here’s the final sketch:</br> 
+                </p>
+                <img style="display: block; width: 60%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/hifi_sketch.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>As you can see from the two screenshots above, the design sketches progressed from a lower fidelity version that had minimal features into a higher fidelity one that had all the features identified in the user journey map earlier.</br>
+                    <br>Then, I used Origami Studio to translate my mockup into a live prototype, which is shown in the video below. This video is also live on Sedge’s <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.sedge.io/" target="_blank">website</a>.</br>
+                </p>
+
+                <div style="width: 60%; border-radius: 30px; overflow: hidden; cursor: pointer;"><script src="https://fast.wistia.com/embed/medias/wrd5ljdjnf.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;cursor: pointer;"><div class="wistia_responsive_wrapper" style="height:100%;left:-2.5%;position:absolute;top:-2.5%;width:105%;cursor: pointer;"><div class="wistia_embed wistia_async_wrd5ljdjnf videoFoam=true" style="height:100%;position:relative;width:100%;cursor: pointer;">&nbsp;</div></div></div></div>
+                
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">User Testing</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>I then tested out the prototype with 15 beta testers - all of whom are music producers from different backgrounds and locations. All the tests were conducted over the span of 30 minutes, and below are some of the most common responses/observations that I received from the tests:</br>
+                </p>
+                <ul style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <li>“The product looks very polished and efficient, but is it scalable? Like if I upload more and more projects to the platform, will it become slower?.”</li>
+                    <li>“There is no integration with (insert preferred DAW here). I will only use it if there is an integration with (insert preferred DAW here).”</li>
+                    <li>“Love the product but I’m not sure if I will become a paid user - what value am I getting out of this?”</li>
+                    <li>Users also tend to click on buttons that are yet to be functional on the app, which is a sign that I need to build out the full set of functionalities in order to present the complete user experience to my users.</li>
+                </ul>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Every time I conducted these user tests, I also made sure to emphasize the importance of them providing an unbiased and honest opinion about the product and not sugarcoat things simply because they knew me in person.</br>
+                    <br>I also made sure not to ask any leading questions that might bias their train of thought to go down a particular rabbit hole. For example, instead of asking “do you think this feature will help improve feedback quality”, I would ask “what do you think is the purpose of this feature”. This way, the interviewee is presented with an open-ended question, which they would then be able to answer with no preconceptions.</br>
+                    <br>I would also write down each of their comments on a Trello board and assign different priority levels to them. Based on those priority levels, I would then work on integrating those feedback into the prototype that I created.</br>
+                    <br>For example, one of the feedback that I received is to add a line that spans the whole audio player bar that would show the exact position for the comment’s timestamp - which would help increase clarity. After incorporating that feedback, my prototype went from looking like this:</br>
+                </p>
+                <img style="display: block; width: 50%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/music_player_before.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>To this:</br> 
+                </p>
+                <img style="display: block; width: 50%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/music_player_after.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>This might be a subtle change, but there was a substantial amount of work that went into the backend. To provide some context, below is an illustration of all the connections going on in the backend of the prototype:</br> 
+                </p>
+                <img style="display: block; width: 60%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/prototype_connections.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Also, based on the feedback that I received, the biggest concern that I am facing is Sedge’s value proposition and how to make it more concrete.</br>
+                    <br>To do that, I decided to show my users the value that they are getting out of Sedge by creating a calculator on the website that shows my users that by using Sedge, they could reduce the average project turnaround time by 10 mins, which translates to an extra $72 profit per month - a 720% return on investment.</br>
+                </p>
+                <img style="display: block; width: 60%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/calculator.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>You can also play with the calculator yourself on Sedge's <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.sedge.io/" target="_blank">website</a> to see how much more you stand to earn by using Sedge.</br>
+                </p>
+
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">Next Steps</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Now that the website is complete, I will be focusing all my time and effort on building out the product while getting more people to sign up for the waitlist - which you can sign up <a class="typeform-share link" href="https://sedgehq.typeform.com/to/HU8j0m" data-mode="popup" style="text-decoration: none; font-weight: 600; color: #000; outline: none" target="_blank">here </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script> if you are interested. Alternatively, you can also keep up with our latest developments by following our blog <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://blog.sedge.io/" target="_blank">here</a>.</br>
+                </p>
+                <hr style="width: 60%; margin: 50px auto 20px auto">
+                <p style="width: 60%; text-align: left; font-size: calc(12.5px + 0.4vw);">
+                    <br>Disclaimer: Due to various personal reasons, I have made the tough decision to hand over the reigns to Sedge to <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.linkedin.com/in/jialin-wu-658929185/" target="_blank">Alex Wu</a> and relieve myself of my founder duties as of late-April 2020.</br>
+                </p>
+
+                <h2 style="font-size: calc(20px + 1.5vw); margin: 150px auto 50px auto">Join My Newsletter</h2>
+                <form class="emailInput" action="https://kgi.us17.list-manage.com/subscribe/post?u=bdb1d7b2b818bc1443dd9d193&amp;id=283a306153" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                    <input class="formInputs" name="EMAIL" id="mce-EMAIL" type="email" required placeholder="panic@thedis.co">
+                    <button class="subButton" type="submit" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
+                    <p class="successWords">Awesome! Don't forget to check your email to confirm your subscription! 🎉</p>
+                </form>
+                <p style="width: 60%">Receive my occasional musings on tech, product and data</p>
+            </div></center>
+        </section>
+
+        <!--Footer-->
+        <footer style="background-color: #fff; text-align: center; padding-top: 50px; padding-bottom: 50px; border-top: solid 1px rgba(0, 0, 0, 0.5)">
+            <div style="justify-content: center;">
+                <a href="https://twitter.com/FNTey" target="_blank"><img class="image-float" style="display: inline-block; margin: auto 2%; height: 35px;" src="static/assets/twitter.svg"></img></a>
+                <a href="https://www.linkedin.com/in/steventey/" target="_blank"><img class="image-float" style="display: inline-block; margin: auto 2%; height: 35px;" src="static/assets/linkedin.svg"></img></a>
+                <a href="/"><img class="image-float" style="display: inline-block; margin: auto 3.5% -10px 3.5%; height: 75px;" src="static/assets/logo.svg"></img></a>
+                <a href="mailto:steven@oneword.domains"><img class="image-float" style="display: inline-block; margin: auto 2%; height: 35px;" src="static/assets/mail.svg"></img></a>
+                <a href="about"><img class="image-float" style="display: inline-block; margin: -3px 2% auto 2%; height: 30px; border-radius: 50%; border: 3px solid #000" src="static/assets/me.jpg"/></a> 
+            </div>
+        </footer>
+
+        <script>
+
+            // Hamburger Side Menu
+            $(document).ready(function(){
+                $(".hamburger").click(function(){
+                    $(this).toggleClass("is-active");
+                    $(".mobileMenu").toggleClass("expanded");
+                });
+            });
+
+            // Text Scrambler Effect
+            class TextScramble {
+                constructor(el) {
+                    this.el = el
+                    this.chars = '!<>-_\\/[]{}—=+*^?#________'
+                    this.update = this.update.bind(this)
+                }
+                setText(newText) {
+                    const oldText = this.el.innerText
+                    const length = Math.max(oldText.length, newText.length)
+                    const promise = new Promise((resolve) => this.resolve = resolve)
+                    this.queue = []
+                    for (let i = 0; i < length; i++) {
+                    const from = oldText[i] || ''
+                    const to = newText[i] || ''
+                    const start = Math.floor(Math.random() * 12)
+                    const end = start + Math.floor(Math.random() * 12)
+                    this.queue.push({ from, to, start, end })
+                    }
+                    cancelAnimationFrame(this.frameRequest)
+                    this.frame = 0
+                    this.update()
+                    return promise
+                }
+                update() {
+                    let output = ''
+                    let complete = 0
+                    for (let i = 0, n = this.queue.length; i < n; i++) {
+                    let { from, to, start, end, char } = this.queue[i]
+                    if (this.frame >= end) {
+                        complete++
+                        output += to
+                    } else if (this.frame >= start) {
+                        if (!char || Math.random() < 0.28) {
+                        char = this.randomChar()
+                        this.queue[i].char = char
+                        }
+                        output += `<span class="dud">${char}</span>`
+                    } else {
+                        output += from
+                    }
+                    }
+                    this.el.innerHTML = output
+                    if (complete === this.queue.length) {
+                    this.resolve()
+                    } else {
+                    this.frameRequest = requestAnimationFrame(this.update)
+                    this.frame++
+                    }
+                }
+                randomChar() {
+                    return this.chars[Math.floor(Math.random() * this.chars.length)]
+                }
+            }
+
+            const el = document.querySelector("#subtitles")
+            const fx = new TextScramble(el)
+
+            $("#position").hover(function(){
+                fx.setText("Founder, Full Stack Developer")
+            }, function(){
+                fx.setText("👇 Hover over the emojis below 👇")
+            })
+
+            $("#duration").hover(function(){
+                fx.setText("Nov 2019 - Apr 2020")
+            }, function(){
+                fx.setText("👇 Hover over the emojis below 👇")
+            })
+
+            $("#location").hover(function(){
+                fx.setText("Berlin, Germany")
+            }, function(){
+                fx.setText("👇 Hover over the emojis below 👇")
+            })
+
+            // Subscribe to Newsletter
+            const button = document.querySelector('.subButton');
+            button.addEventListener('click', event => {
+                $(".formInputs").css({"display": "none"})
+                $(".subButton").css({"display": "none"})
+                $(".successWords").css({"display": "block"})
+            });
+
+        </script>
+
+    </body>
+
+</html>

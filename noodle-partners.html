@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Noodle Partners | Steven Tey</title>
+        <link rel="shortcut icon" type="image/x-icon" href="static/assets/logo.svg"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="static/assets/logo.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="static/assets/logo.png">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--  Essential META Tags -->
+
+        <meta itemprop="name" content="Noodle Partners | Steven Tey">
+        <meta itemprop="description" content="A detailed account of my experience working as a Product Management Intern at Noodle Partners in the summer of 2019 at New York City.">
+        <meta itemprop="image" content="static/assets/np.png">
+        <meta name="description" content="A detailed account of my experience working as a Product Management Intern at Noodle Partners in the summer of 2019 at New York City.">
+        <meta property="og:title" content="Noodle Partners | Steven Tey">
+        <meta property="og:description" content="A detailed account of my experience working as a Product Management Intern at Noodle Partners in the summer of 2019 at New York City.">
+        <meta property="og:image" content="static/assets/np.png">
+        <meta property="og:url" content="https://steventey.com/">
+        <meta property="og:type" content="website">
+
+
+        <!--  Non-Essential, But Recommended -->
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@FNTey" />
+        <meta name="twitter:creator" content="@FNTey">
+        <meta name="twitter:title" content="Noodle Partners | Steven Tey">
+        <meta name="twitter:description" content="A detailed account of my experience working as a Product Management Intern at Noodle Partners in the summer of 2019 at New York City.">
+        <meta name="twitter:image" content="https://steventey.com/static/assets/np.png">
+
+        <!--  CSS Stylesheets -->
+        
+        <link rel="stylesheet" type="text/css" href="static/styles/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="static/styles/slick-theme.css"/>
+        <link rel="stylesheet" href="https://use.typekit.net/qae7fcj.css">
+
+        <!--  JavaScript Stuff -->
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            
+        <style type="text/css">
+
+            html, body {
+                margin:0;
+                padding:0;
+            }
+
+            body {
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            h1, h2, h4 {
+                font-family: soleil,sans-serif;
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            /* main */
+            header {
+                height: 550px;
+                text-align: center;
+            }
+
+            header img {
+                height: 65px; 
+                margin-top: -75px;
+                margin-left: 10%;
+                float: left;
+            }
+
+            h1 {
+                font-size: calc(30px + 2vw);
+                color: #000;
+                margin-top: 150px;
+                display: block;
+                padding-top: 50px;
+            }
+
+            header h5 {
+                font-size: calc(15px + 0.5vw);
+                font-weight: 400;
+                color: #000;
+                margin-top: -20px
+            }
+
+            header p {
+                font-size: calc(10px + 0.5vw);
+                font-weight: 400;
+                color: #000;
+                opacity: 0.7;
+            }
+
+            .emailInput {
+                background-color: #fff;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+                border-radius: 6px;
+                display: inline-flex; 
+                justify-content: space-between;
+                width: 35%;
+                outline: none;
+                overflow: hidden;
+            }
+            .formInputs {
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-size: calc(12px + 0.5vw);
+                margin: 25px;
+                width: 70%;
+                border: none;
+                outline: none;
+            }
+            .formInputs::placeholder {
+                color: #000;
+                opacity: 0.6
+            }
+            .successWords {
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-size: calc(12px + 0.5vw);
+                margin: 25px;
+                width: 100%;
+                color: #000;
+                opacity: 1;
+                border: none;
+                outline: none;
+                display: none;
+                text-align: center;
+            }
+            .subButton {
+                padding: 3% 5%;
+                margin: 10px;
+                cursor: pointer;
+                border: solid 2px #000;
+                border-radius: 10px;
+                outline: none;
+                background-color: #000;
+                color: #fff;
+                font-family: soleil,sans-serif;
+                font-weight: 500; 
+                font-size: calc(12px + 0.5vw);
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+                transition: all 0.4s ease 0s;
+            }
+            .subButton:hover {
+                transform: scale(1.03);
+            }
+            
+            @media screen and (max-width: 1000px) {
+                .emailInput {
+                    display: inline-block;
+                    width: 45%;
+                }
+                .formInputs {
+                    text-align: center;
+                    margin-bottom: 10px;
+                    width: 80%;
+                }
+                .successWords {
+                    width: 90%;
+                }
+                .subButton {
+                    width: 80%;
+                }
+            } @media screen and (max-width: 800px) {
+                .emailInput {
+                    display: inline-block;
+                    width: 60%;
+                }
+            } @media screen and (max-width: 500px) {
+                .emailInput {
+                    display: inline-block;
+                    width: 80%;
+                }
+                .successWords {
+                    width: 85%;
+                }
+            }
+            .hamburger { 
+                float: right;
+                margin-right: 10%;
+                margin-left: -15%;
+                top: -85px;
+                display: none;
+                z-index: 99;
+            }
+
+            .hamburger .line{
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+            display: block;
+            margin: 7px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            .hamburger:hover{
+            cursor: pointer;
+            }
+
+            #hamburger-9{
+            position: relative;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            #hamburger-9.is-active{
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            }
+
+            #hamburger-9:before{
+            content: "";
+            position: absolute;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 50px;
+            height: 50px;
+            border: 3px solid transparent;
+            top: calc(50% - 25px);
+            left: calc(50% - 25px);
+            border-radius: 100%;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            #hamburger-9.is-active:before{
+            border: 3px solid #000;
+            }
+
+            #hamburger-9.is-active .line{
+            width: 30px;
+            }
+
+            #hamburger-9.is-active .line:nth-child(2){
+            opacity: 0;
+            }
+
+            #hamburger-9.is-active .line:nth-child(1){
+            -webkit-transform: translateY(10px);
+            -ms-transform: translateY(10px);
+            -o-transform: translateY(10px);
+            transform: translateY(10px);
+            }
+
+            #hamburger-9.is-active .line:nth-child(3){
+            -webkit-transform: translateY(-10px) rotate(90deg);
+            -ms-transform: translateY(-10px) rotate(90deg);
+            -o-transform: translateY(-10px) rotate(90deg);
+            transform: translateY(-10px) rotate(90deg);
+            }
+
+            .mobileMenu{
+                position: fixed; 
+                display: block;
+                margin-top: -50px; 
+                margin-left: -50px; 
+                background-color: #fff; 
+                width: 0%; 
+                height: 0%; 
+                right: -50%; 
+                top: -10%; 
+                border-radius: 50%; 
+                z-index: 9;
+                transition: all .3s ease;
+                visibility: hidden;
+            }
+            .mobileMenu.expanded{
+                width: 200%; 
+                height: 150%; 
+            }
+
+            #header-logo-mobile {
+                display: none;
+            }
+
+            .mobile-card {
+                display: none;
+            }
+
+            .row {
+                padding: 50px;
+                background-color: #fff; 
+                display: flex;
+            }
+            .columnSmall {
+                flex: 35%;
+                padding: 5%;
+                margin: auto;
+                text-align: right;
+            }
+            .columnLarge {
+                flex: 65%;
+                padding: 5%;
+            }
+            .demoCard {
+                overflow: hidden;
+                filter: drop-shadow( 0px 0px 10px rgba(0, 0, 0, .2));
+                border-radius: 20px;
+                cursor: pointer;
+                width: 100%;
+            }
+
+            @media screen and (max-width: 1000px) {
+                .header-socials{
+                    visibility: hidden;
+                }
+                #header-logo {
+                    display: none;
+                }
+                #header-logo-mobile {
+                    display: block;
+                }
+                .hamburger { 
+                    display: block;
+                }
+                .mobileMenu{
+                    visibility: visible;
+                }
+                .mobile-card{
+                    display: block
+                }
+                .row{
+                    flex-wrap: wrap;
+                }
+            }
+
+            ul.features {
+                text-align: left; 
+                margin: 30px 10% 50px 10%;
+            }
+
+            ul.features > li {
+                margin-bottom: 20px;
+                padding-left: 15%;
+                margin-left: -25%;
+                list-style: none;
+                background-repeat: no-repeat;
+                background-position: left right;
+                background-size: 22px;
+                color: #fff;
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-size: calc(12px + 0.5vw);
+                background-image: url(static/assets/check-top.svg);
+            }
+
+            .slider {
+                width: 60%;
+                margin: 100px auto 50px auto;
+                padding: 50px auto;
+            }
+            .slick-prev:before,
+            .slick-next:before {
+                color: black;
+            }
+            .slick-slide {
+            transition: all ease-in-out .3s;
+                opacity: .2;
+            }
+            .slick-active {
+                opacity: .5;
+                transform: scale(1.05);
+            }
+            .slick-current {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            .testimonial {
+                max-width: 60%;
+                padding: 10px 10% 10px 10%; 
+                margin: 30px 10% 50px 10%; 
+                text-align: center;
+                outline: none;
+                overflow: hidden;
+            }
+            .testimonial h2 {
+                font-size: calc(15px + 0.5vw);
+            }
+            .mobile-words {
+                    display: none;
+                }
+            @media screen and (max-width: 642px) {
+                .slider{
+                    width: 80%;
+                }
+                .testimonial {
+                    max-width: 80%;        
+                    padding: 10px 5% 10px 5%; 
+                    margin: 30px 5% 50px 5%; 
+                }
+                .desktop-words {
+                    display: none;
+                }
+                .mobile-words {
+                    display: block;
+                }
+                header {
+                    height: 475px;
+                }
+            }
+
+            .scrollDown {
+                display: block;
+                margin-top: 100px;
+                float: none; 
+                margin-left: 0;
+                cursor: pointer;
+                transition: all 0.3s ease 0s;
+            }
+            .scrollDown:hover {
+                transform: scale(1.1);
+            }
+
+            .image-float{
+                transition: all 0.3s ease 0s;
+            }
+            .image-float:hover {
+                transform: scale(1.1);
+            }
+
+            br {
+                display: block;
+                margin: 20px 0;
+            }
+
+            .iframe-container{
+                position: relative;
+                width: 60%;
+                border-radius: 20px; 
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); 
+                padding-bottom: 35%; 
+                overflow: hidden;
+                height: 0;
+            }
+            .iframe-container iframe{
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .emoji {
+            padding: 3rem;
+            font-size: 4rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,.3);
+            transition: 
+                text-shadow .2s ease-in-out,
+                transform .2s ease-in-out;
+            cursor: pointer;
+            }
+
+            .emoji:hover {
+                transform: scale(1.5);
+                text-shadow: 0 20px 20px rgba(0,0,0,.3);
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <!--Header-->
+        <header>
+            <a href="/"><img class="image-float" id="header-logo" src="static/assets/logo.svg"></img></a>
+            <a href="/"><img id="header-logo-mobile" style="margin-top: -100px" src="static/assets/logo.svg"></img></a>
+            <div class="hamburger" id="hamburger-9">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <a href="https://twitter.com/FNTey" target="_blank"><img class="header-socials image-float" style="float: right; margin-right: 25%; height: 35px; margin-top: -70px;" src="static/assets/twitter.svg"></img></a>
+            <a href="https://www.linkedin.com/in/steventey/" target="_blank"><img  class="header-socials image-float" style="float: right; margin-right: 20%; height: 35px; margin-top: -70px;" src="static/assets/linkedin.svg"></img></a>
+            <a href="mailto:steven@oneword.domains"><img class="header-socials image-float" style="float: right; margin-right: 15%; height: 35px; margin-top: -70px;" src="static/assets/mail.svg"></img></a>
+            <a href="about"><img class="header-socials image-float" style="float: right; margin-right: 10%; border-radius: 50%; height: 30px; margin-top: -70px; border: 3px solid #000" src="static/assets/me.jpg"/></a>
+
+            <h1 class="desktop-words">Noodle Partners</h1>
+            <h5 class="desktop-words" id="subtitles" style="margin: -25px auto 0px auto">👇 Hover over the emojis below 👇</h5>
+            <span class="emoji desktop-words" id="position">👨‍💻</span>
+            <span class="emoji desktop-words" id="duration">📅</span>
+            <span class="emoji desktop-words" id="location">🌆</span>
+
+            <h1 class="mobile-words">Noodle Partners</h1>
+            <h5 class="mobile-words">
+                👨‍💻 Product Management Intern<br>
+                📅 May 2019 - Aug 2019<br>
+                🌆 New York City, USA<br>
+            </h5>
+        </header>
+        <div class="mobileMenu">
+            <a href="https://twitter.com/FNTey" target="_blank"><img style="display: block; height: 50px; margin-top: 300px; margin-left: 47.5%;" src="static/assets/twitter.svg"></img></a>
+            <a href="https://www.linkedin.com/in/steventey/" target="_blank"><img style="display: block; height: 50px; margin-top: 50px; margin-left: 47.5%;" src="static/assets/linkedin.svg"></img></a>
+            <a href="mailto:steven@oneword.domains"><img style="display: block; height: 50px; margin-top: 50px; margin-left: 47.5%;" src="static/assets/mail.svg"></img></a>
+            <a href="about"><img style="display: block; height: 50px; margin-top: 50px; margin-left: 47.5%; border-radius: 50%; border: 3px solid #000" src="static/assets/me.jpg"/></a>
+        </div>
+
+        <section style="margin-top: -250px; margin-bottom: 100px">
+            <center><div style="width: 100%; margin-left: auto; margin-right: auto">
+                <img style="display: block; width: 70%; border-radius: 30px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin-bottom: 30px" src="static/assets/np.png"/>
+                
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>In the summer of 2019, I interned at <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.noodlepartners.com" target="_blank">Noodle Partners (NP)</a>, a New York-based company that is one of the leading Online Program Managers (OPMs) in the EdTech industry. As an OPM, NP provides an all-in-one solution for universities that are seeking to launch online programs for their Master Degrees.</br>
+                    <br>Being a mid-sized startup, NP has over 150 employees and is experiencing rapid growth, the degree of which is unprecedented in the EdTech world. In terms of organizational structure, NP runs on a cross-functional matrix structure, with different functional teams working together to build customized solutions for our clients. Therefore, although my internship was technically a Product Management role, the responsibilities that entailed were not only product-related, but would also involve marketing, data analysis, design, content creation, etc.</br>
+                    <br>During my 12-week internship at NP, the 3 projects that I spearheaded were:</br>
+                </p>
+                <ol style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <li>Configuring Salesforce (SFDC) and Marketing Cloud (SFMC)</li>
+                    <li>Streamlined NP’s contract management system with SpringCM</li>
+                    <li>Filmed, edited and produced a company culture video</li>
+                </ol>
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">Salesforce + Marketing Cloud</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>This was one of my first ever tasks as a Product Intern at NP. I remember getting introduced to <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.linkedin.com/in/harry-pearce-86226b92/" target="_blank">Harry</a>, the Product Manager for Marketing and Enrollment, who will eventually be one of my two direct managers throughout the course of my internship. With his help and guidance, along with hours of research and trial-and-error, I learned how to configure Salesforce Marketing Cloud (SFMC) for the company’s various business units (BUs)<sup><a style="text-decoration: none; color: #000; outline: none" href="#footnote1">[1]</a></sup>.</br>
+                    <br>This configuration is an essential part of our business since each BU has thousands of leads<sup><a style="text-decoration: none; color: #000; outline: none" href="#footnote2">[2]</a></sup> coming in from Sales Cloud which needs to be segregated based on the "Program of Interest"<sup><a style="text-decoration: none; color: #000; outline: none" href="#footnote3">[3]</a></sup> with the use of "Filtered Data Extensions"<sup><a style="text-decoration: none; color: #000; outline: none" href="#footnote4">[4]</a></sup>. After the segregation is complete, we would be able to set up customized email drip campaigns by using SFMC’s Journey Builder<sup><a style="text-decoration: none; color: #000; outline: none" href="#footnote5">[5]</a></sup> feature for each group of leads depending on their "Program of Interest".</br>
+                    <br>When I first started in May, there wasn’t a clear cut, step-by-step visualization of this process at NP, so one of my main deliverables for this project is to develop the full product lifecycle from scratch while accounting for any dependencies that could result in blockers.</br>
+                    <br>For example, below is the general template that I created for visualizing user journeys, which was rather important, as this  allowed various functional teams in the company to understand their roles and responsibilities throughout a user's journey:</br>
+                </p>
+                <img style="display: block; width: 60%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/journey_map.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Then, I started learning how to implement Salesforce within a highly-matrix organization like Noodle Partners. It was a pretty steep learning curve, but by working with our Salesforce developers and implementation parts, as well as referring to dozens of Trailmix modules, I soon became an expert at implementing both Salesforce and Marketing Cloud. To ensure a smooth knowledge transfer when my internship ends, I also documented the whole process on Confluence for future reference. Click <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="static/assets/salesforce.pdf" target="_blank">here</a> to read a compilation of the documentation that I wrote.</br>
+                </p>
+                <a href="static/assets/salesforce.pdf" target="_blank"><img src="static/assets/salesforce.png" style="display: block; width: 60%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" alt="A Comprehensive Guide to Configuring SFDC & SFMC for Noodle Partners’ Various BUs" class="inline"/></a>
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">SpringCM</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>During my internship, I was also given the wonderful opportunity to be the product owner of SpringCM - a DocuSign-owned SaaS provider designed to help companies like Noodle Partners streamline their contract management system. My orders were pretty straightforward and relatively open-ended - I had to see through the implementation of SpringCM in all levels of my company from start to finish.</br>
+                    <br>To do that, I first came up with a hypothesis of who will be using the system and what their respective user stories/acceptance criteria would be. I started drawing out user journey maps and contract approval workflows to visualize the whole process and to further develop my hypothesis. Below is one of the main illustrations that I made:</br>
+                </p>
+                <img style="display: block; width: 60%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/approvalworkflow.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>To prove the veracity of the hypothesis, I also gathered insights from various functional teams with regards to the requirements that they might need from a system like this - which might vary depending on their contract management processes. As I interviewed more stakeholders and gathered more input, I iterated my diagrams and developed my hypothesis further. Eventually, I was able to ensure that the needs of all the stakeholders were being met and all the user stories were taken into account during the implementation phase.</br>
+                    <br>Next, I also identified the various constraints present. According to our CFO, we had a limited budget on this project, and the Executive Team (ET) was expecting a small pilot team of not more than 15 people for the initial rollout to assess the feasibility of this product. However, from my hypothesis above, I identified 4 different contract approval workflows that would involve various functional teams. Therefore, to meet the requirements set by the ET, I had to apply the concept of “constraint satisfaction” in order to make sure the needs of all the involved stakeholders were being met. </br>
+                    <br>First, by discussing closely with our CFO and the VP of Product, we identified the truely essential personnel from each approval workflow and eliminated the non-essential ones. Then, I also proposed a workaround - instead of just assigning an account for each individual stakeholder, we could group the stakeholders according to their functional teams and assign accounts to the functional leads, which will subsequently be shared with all the functional team members. This way, we will be able to save on subscription cost (SpringCM charges a fixed fee per user, per month for their software) but still meet all the requirements of the functional teams.</br>
+                    <br>To convince the ET, I also wrote a <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="static/assets/DecisionMemo.pdf" target="_blank">Decision Memo</a> that included all of the aforementioned points, as well as the potential benefits that SpringCM could bring the company:</br>
+                </p>
+                <ul style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <li>Streamline and increase the efficiency of the contract management process</li>
+                    <li>Decrease contract turnaround time</li>
+                    <li>Come up with more tractable approval workflows</li>
+                    <li>Avoid inappropriate contract signoffs</li>
+                    <li>Keep track of contract renewal deadlines in all levels of the companies operation</li>
+                </ul>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Below is the finalized version of the various workflows involved in the SpringCM setup at Noodle Partners:</br>
+                </p>
+                <img style="display: block; width: 60%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/np_springcm_workflow.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">Company Culture Video</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>During my 12 weeks at Noodle Partners, I also filmed, edited and produced a company culture video for Noodle Partner’s Careers page in order to help increase job application rates.</br> 
+                    <br>The whole process was quite longitudinal - I spent the first few weeks understanding the context of the video and empathizing with the user experience, which, in this case, would be the experience of the audience when they watch this video. I understood that this was a video for an EdTech startup in 2019, where videos are essentially the public-facing first impression of the company, so quality production is definitely a must.</br>
+                    <br>I defined the purpose of the video as to depict the work culture at NP and how that makes us stand out amongst our competitors.</br>
+                    <br>In terms of audience, this video is targeted at potential job seekers who might be interested in working at NP, and would be displayed on the Careers page of NP, as well as their various social media. By understanding the context of the video, it helped me shape my vision of how the video is going to look like, as well as the content that would go into it.</br>
+                    <br>Then, to come up with a structure for the video, I analyzed the types of videos that were made by our biggest competitor, <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://youtu.be/cvUY3gQzMic" target="_blank">2U</a>, as well as other tech companies such as <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://youtu.be/n_Cn8eFo7u8" target="_blank">Google</a> and <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://youtu.be/YTuTIYX2XaI" target="_blank">Facebook</a>. As I watched those videos, I critiqued the interview style as well as the rationale behind every creative choice that was made in the video, and noted the following:</br>
+                </p>
+                <ul style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <li>The shots of the interviews were always interlaced with b-roll shots of the office space/employees</li>
+                    <li>Brand recognition - there will always be b-roll shots where the company logo is subtly presented in the background, (e.g. laptop stickers, banners next to the door, etc.)</li>
+                    <li>The videos usually end with the name/logo of the company displayed onscreen</li>
+                    <li>Small details like how the name/position of the interviewee is shown on screen and for how long are they shown for.</li>
+                </ul>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>I also identified the strengths and weaknesses of those videos and see how we can exemplify the strengths and omit the weaknesses. For example, some notable strengths would definitely be the smooth, high-quality b-roll shots and audio, along with a good focus on the interviewee during the interview shots. Some weakenesses that I noticed were the rugged transitions in between shots, as well as the lack of relevance between the b-roll and the words that were being said by the interviewee.</br>
+                    <br>By objectively criticizing the videos I watched, I was able to be more conscious about the creative decisions I made for my video and make sure that the end product was as professional as possible.</br>
+                </p>
+                <div class="iframe-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/C3I2whc2Dso" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">Conclusion</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>To sum it all up, my internship at Noodle Partners this summer has been one hell of a learning experience, and despite the steep learning curve in the beginning, I was able to leverage my academic expertise along with my past experiences to excel in my position as a Product Management intern. If you're interested, feel free to read this <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="static/assets/recommendation_letter_np.pdf" target="_blank">recommendation letter</a> that I received from <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.linkedin.com/in/jeremyrudy/" target="_blank">Jeremy Rudy</a>, the VP of Product, who was also my mentor and manaager at Noodle Partners.</br>
+                </p>
+                <hr style="width: 60%; margin: 50px auto">
+                <ol style="width: 60%; text-align: left; font-size: calc(12.5px + 0.4vw);">
+                    <li id="footnote1">We refer to each university client as a business unit, or BU for short.</li>
+                    <li id="footnote2">Each lead contains all the data for a prospective student who is interested in a particular university program. Once the student enrolls for the program, the lead is said to be “converted” to an opportunity.</li>
+                    <li id="footnote3">The particular Masters Program that the prospective student (lead) is interested in pursuing.</li>
+                    <li id="footnote4">This is an Salesforce Marketing Cloud (SFMC) terminology that refers to the mechanism that is used to segregate leads based on certain filter criteria for targeted marketing purposes.</li>
+                    <li id="footnote5">Another SFMC feature that allows us to send out mass emails at pre-determined intervals. </li>
+                </ol>
+
+                <h2 style="font-size: calc(20px + 1.5vw); margin: 150px auto 50px auto">Join My Newsletter</h2>
+                <form class="emailInput" action="https://kgi.us17.list-manage.com/subscribe/post?u=bdb1d7b2b818bc1443dd9d193&amp;id=283a306153" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                    <input class="formInputs" name="EMAIL" id="mce-EMAIL" type="email" required placeholder="panic@thedis.co">
+                    <button class="subButton" type="submit" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
+                    <p class="successWords">Awesome! Don't forget to check your email to confirm your subscription! 🎉</p>
+                </form>
+                <p style="width: 60%">Receive my occasional musings on tech, product and data</p>
+            </div></center>
+        </section>
+
+        <!--Footer-->
+        <footer style="background-color: #fff; text-align: center; padding-top: 50px; padding-bottom: 50px; border-top: solid 1px rgba(0, 0, 0, 0.5)">
+            <div style="justify-content: center;">
+                <a href="https://twitter.com/FNTey" target="_blank"><img class="image-float" style="display: inline-block; margin: auto 2%; height: 35px;" src="static/assets/twitter.svg"></img></a>
+                <a href="https://www.linkedin.com/in/steventey/" target="_blank"><img class="image-float" style="display: inline-block; margin: auto 2%; height: 35px;" src="static/assets/linkedin.svg"></img></a>
+                <a href="/"><img class="image-float" style="display: inline-block; margin: auto 3.5% -10px 3.5%; height: 75px;" src="static/assets/logo.svg"></img></a>
+                <a href="mailto:steven@oneword.domains"><img class="image-float" style="display: inline-block; margin: auto 2%; height: 35px;" src="static/assets/mail.svg"></img></a>
+                <a href="about"><img class="image-float" style="display: inline-block; margin: -3px 2% auto 2%; height: 30px; border-radius: 50%; border: 3px solid #000" src="static/assets/me.jpg"/></a> 
+            </div>
+        </footer>
+
+        <script>
+
+            // Hamburger Side Menu
+            $(document).ready(function(){
+                $(".hamburger").click(function(){
+                    $(this).toggleClass("is-active");
+                    $(".mobileMenu").toggleClass("expanded");
+                });
+            });
+
+            // Text Scrambler Effect
+            class TextScramble {
+                constructor(el) {
+                    this.el = el
+                    this.chars = '!<>-_\\/[]{}—=+*^?#________'
+                    this.update = this.update.bind(this)
+                }
+                setText(newText) {
+                    const oldText = this.el.innerText
+                    const length = Math.max(oldText.length, newText.length)
+                    const promise = new Promise((resolve) => this.resolve = resolve)
+                    this.queue = []
+                    for (let i = 0; i < length; i++) {
+                    const from = oldText[i] || ''
+                    const to = newText[i] || ''
+                    const start = Math.floor(Math.random() * 12)
+                    const end = start + Math.floor(Math.random() * 12)
+                    this.queue.push({ from, to, start, end })
+                    }
+                    cancelAnimationFrame(this.frameRequest)
+                    this.frame = 0
+                    this.update()
+                    return promise
+                }
+                update() {
+                    let output = ''
+                    let complete = 0
+                    for (let i = 0, n = this.queue.length; i < n; i++) {
+                    let { from, to, start, end, char } = this.queue[i]
+                    if (this.frame >= end) {
+                        complete++
+                        output += to
+                    } else if (this.frame >= start) {
+                        if (!char || Math.random() < 0.28) {
+                        char = this.randomChar()
+                        this.queue[i].char = char
+                        }
+                        output += `<span class="dud">${char}</span>`
+                    } else {
+                        output += from
+                    }
+                    }
+                    this.el.innerHTML = output
+                    if (complete === this.queue.length) {
+                    this.resolve()
+                    } else {
+                    this.frameRequest = requestAnimationFrame(this.update)
+                    this.frame++
+                    }
+                }
+                randomChar() {
+                    return this.chars[Math.floor(Math.random() * this.chars.length)]
+                }
+            }
+
+            const el = document.querySelector("#subtitles")
+            const fx = new TextScramble(el)
+
+            $("#position").hover(function(){
+                fx.setText("Product Management Intern")
+            }, function(){
+                fx.setText("👇 Hover over the emojis below 👇")
+            })
+
+            $("#duration").hover(function(){
+                fx.setText("May 2019 - Aug 2019")
+            }, function(){
+                fx.setText("👇 Hover over the emojis below 👇")
+            })
+
+            $("#location").hover(function(){
+                fx.setText("New York City, USA")
+            }, function(){
+                fx.setText("👇 Hover over the emojis below 👇")
+            })
+
+            // Subscribe to Newsletter
+            const button = document.querySelector('.subButton');
+            button.addEventListener('click', event => {
+                $(".formInputs").css({"display": "none"})
+                $(".subButton").css({"display": "none"})
+                $(".successWords").css({"display": "block"})
+            });
+
+        </script>
+
+    </body>
+
+</html>
