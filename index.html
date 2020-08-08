@@ -313,7 +313,10 @@
                 cursor: pointer;
                 width: 100%;
             }
-
+            
+            .mobile-projects{
+                display: none
+            }
             @media screen and (max-width: 1000px) {
                 .header-socials{
                     visibility: hidden;
@@ -335,6 +338,12 @@
                 }
                 .row{
                     flex-wrap: wrap;
+                }
+                .desktop-projects {
+                    display: none;
+                }
+                .mobile-projects {
+                    display: block;
                 }
             }
 
@@ -471,38 +480,69 @@
             <a href="about"><img style="display: block; height: 50px; margin-top: 50px; margin-left: 47.5%; border-radius: 50%; border: 3px solid #000" src="static/assets/me.jpg"/></a>
         </div>
         
-        <center><h1 id="projects" style="margin-bottom: -50px">Projects</h1></center>
-        <div class="row" style="margin-top: -50px">
-            <div class="columnSmall">
+        <section class="desktop-projects">
+            <center><h1 id="projects" style="margin-bottom: -50px">Projects</h1></center>
+            <div class="row" style="margin-top: -50px">
+                <div class="columnSmall">
+                    <h2 style="margin-bottom: -10px">One Word Domains</h2>
+                    <h3 style="opacity: 0.7; margin-bottom: -10px">Founder, Full-Stack Developer</h3>
+                    <h4 style="opacity: 0.8">San Francisco, Summer 2020</h4>
+                </div>
+                <div class="columnLarge">
+                    <a href="one-word-domains"><img class="demoCard" data-tilt data-tilt-perspective="1500" data-tilt-glare="true" data-tilt-maxglare=".5" src="static/assets/owd.png"></img></a>
+                </div>
+            </div>
+            <div class="row" style="margin-top: -50px">
+                <div class="columnLarge">
+                    <a href="noodle-partners"><img class="demoCard" data-tilt data-tilt-perspective="1500" data-tilt-glare="true" data-tilt-maxglare=".5" src="static/assets/np.png"></img></a>
+                </div>
+                <div class="columnSmall" style="text-align: left;">
+                    <h2 style="margin-bottom: -10px">Noodle Partners</h2>
+                    <h3 style="opacity: 0.7; margin-bottom: -10px">Product Management Intern</h3>
+                    <h4 style="opacity: 0.8">New York City, Summer 2019</h4>
+                </div>
+            </div>
+            <div class="row" style="margin-top: -50px">
+                <div class="columnSmall">
+                    <h2 style="margin-bottom: -10px">Sedge</h2>
+                    <h3 style="opacity: 0.7; margin-bottom: -10px">Founder, Full-Stack Developer</h3>
+                    <h4 style="opacity: 0.8">Berlin, Germany, Fall 2019</h4>
+                </div>
+                <div class="columnLarge">
+                    <a href="sedge"><img class="demoCard" data-tilt data-tilt-perspective="1500" data-tilt-glare="true" data-tilt-maxglare=".5" src="static/assets/sedge.png"></img></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mobile-projects" style="width: 100%">
+            <center><h1 id="projects" style="margin-bottom: -50px">Projects</h1></center>
+            
+            <a href="one-word-domains"><img class="demoCard" style="margin-top: 70px" src="static/assets/owd.png"></img></a>
+            <div style="text-align: center;">
                 <h2 style="margin-bottom: -10px">One Word Domains</h2>
                 <h3 style="opacity: 0.7; margin-bottom: -10px">Founder, Full-Stack Developer</h3>
                 <h4 style="opacity: 0.8">San Francisco, Summer 2020</h4>
             </div>
-            <div class="columnLarge">
-                <a href="one-word-domains"><img class="demoCard" data-tilt data-tilt-perspective="1500" data-tilt-glare="true" data-tilt-maxglare=".5" src="static/assets/owd.png"></img></a>
-            </div>
-        </div>
-        <div class="row" style="margin-top: -50px">
-            <div class="columnLarge">
-                <a href="noodle-partners"><img class="demoCard" data-tilt data-tilt-perspective="1500" data-tilt-glare="true" data-tilt-maxglare=".5" src="static/assets/np.png"></img></a>
-            </div>
-            <div class="columnSmall" style="text-align: left;">
+
+            <a href="noodle-partners"><img class="demoCard" style="margin-top: 70px" src="static/assets/np.png"></img></a>
+               
+            <div style="text-align: center;">
                 <h2 style="margin-bottom: -10px">Noodle Partners</h2>
                 <h3 style="opacity: 0.7; margin-bottom: -10px">Product Management Intern</h3>
                 <h4 style="opacity: 0.8">New York City, Summer 2019</h4>
             </div>
-        </div>
-        <div class="row" style="margin-top: -50px">
-            <div class="columnSmall">
+
+            <a href="sedge"><img class="demoCard"style="margin-top: 70px" src="static/assets/sedge.png"></img></a>
+
+            <div style="text-align: center;">
                 <h2 style="margin-bottom: -10px">Sedge</h2>
                 <h3 style="opacity: 0.7; margin-bottom: -10px">Founder, Full-Stack Developer</h3>
                 <h4 style="opacity: 0.8">Berlin, Germany, Fall 2019</h4>
             </div>
-            <div class="columnLarge">
-                <a href="sedge"><img class="demoCard" data-tilt data-tilt-perspective="1500" data-tilt-glare="true" data-tilt-maxglare=".5" src="static/assets/sedge.png"></img></a>
-            </div>
-        </div>
+            
+        </section>
 
+        <center><h1 class="mobile-words" id="projects" style="margin-bottom: -50px; font-size: 35px">Recommendations</h1></center>
         <section class="responsive slider" style="outline: none; padding-bottom: 50px">
             <div class="testimonial">
                 <h2>"I can definitively state that Steven would be an excellent addition to any team."</h2>
