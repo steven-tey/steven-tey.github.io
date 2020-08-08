@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>One Word Domains | Steven Tey</title>
+        <link rel="shortcut icon" type="image/x-icon" href="static/assets/logo.svg"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="static/assets/logo.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="static/assets/logo.png">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--  Essential META Tags -->
+
+        <meta itemprop="name" content="One Word Domains | Steven Tey">
+        <meta itemprop="description" content="In the Summer of 2020, I built and launched One Word Domains in a week, which got to #2 on Product Hunt, the front page of Hacker News, and is currently generating $3.5K in MRR. Here's how I did it.">
+        <meta itemprop="image" content="static/assets/owd.png">
+        <meta name="description" content="In the Summer of 2020, I built and launched One Word Domains in a week, which got to #2 on Product Hunt, the front page of Hacker News, and is currently generating $3.5K in MRR. Here's how I did it.">
+        <meta property="og:title" content="One Word Domains | Steven Tey">
+        <meta property="og:description" content="In the Summer of 2020, I built and launched One Word Domains in a week, which got to #2 on Product Hunt, the front page of Hacker News, and is currently generating $3.5K in MRR. Here's how I did it.">
+        <meta property="og:image" content="static/assets/owd.png">
+        <meta property="og:url" content="https://steventey.com/">
+        <meta property="og:type" content="website">
+
+
+        <!--  Non-Essential, But Recommended -->
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@FNTey" />
+        <meta name="twitter:creator" content="@FNTey">
+        <meta name="twitter:title" content="One Word Domains | Steven Tey">
+        <meta name="twitter:description" content="In the Summer of 2020, I built and launched One Word Domains in a week, which got to #2 on Product Hunt, the front page of Hacker News, and is currently generating $3.5K in MRR. Here's how I did it.">
+        <meta name="twitter:image" content="https://steventey.com/static/assets/owd.png">
+
+        <!--  CSS Stylesheets -->
+        
+        <link rel="stylesheet" type="text/css" href="static/styles/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="static/styles/slick-theme.css"/>
+        <link rel="stylesheet" href="https://use.typekit.net/qae7fcj.css">
+
+        <!--  JavaScript Stuff -->
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            
+        <style type="text/css">
+
+            html, body {
+                margin:0;
+                padding:0;
+            }
+
+            body {
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            h1, h2, h4 {
+                font-family: soleil,sans-serif;
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            /* main */
+            header {
+                height: 550px;
+                text-align: center;
+            }
+
+            header img {
+                height: 65px; 
+                margin-top: -75px;
+                margin-left: 10%;
+                float: left;
+            }
+
+            h1 {
+                font-size: calc(30px + 2vw);
+                color: #000;
+                margin-top: 150px;
+                display: block;
+                padding-top: 50px;
+            }
+
+            header h5 {
+                font-size: calc(15px + 0.5vw);
+                font-weight: 400;
+                color: #000;
+                margin-top: -20px
+            }
+
+            header p {
+                font-size: calc(10px + 0.5vw);
+                font-weight: 400;
+                color: #000;
+                opacity: 0.7;
+            }
+
+            .emailInput {
+                background-color: #fff;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+                border-radius: 6px;
+                display: inline-flex; 
+                justify-content: space-between;
+                width: 35%;
+                outline: none;
+                overflow: hidden;
+            }
+            .formInputs {
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-size: calc(12px + 0.5vw);
+                margin: 25px;
+                width: 70%;
+                border: none;
+                outline: none;
+            }
+            .formInputs::placeholder {
+                color: #000;
+                opacity: 0.6
+            }
+            .successWords {
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-size: calc(12px + 0.5vw);
+                margin: 25px;
+                width: 100%;
+                color: #000;
+                opacity: 1;
+                border: none;
+                outline: none;
+                display: none;
+                text-align: center;
+            }
+            .subButton {
+                padding: 3% 5%;
+                margin: 10px;
+                cursor: pointer;
+                border: solid 2px #000;
+                border-radius: 10px;
+                outline: none;
+                background-color: #000;
+                color: #fff;
+                font-family: soleil,sans-serif;
+                font-weight: 500; 
+                font-size: calc(12px + 0.5vw);
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+                transition: all 0.4s ease 0s;
+            }
+            .subButton:hover {
+                transform: scale(1.03);
+            }
+            
+            @media screen and (max-width: 1000px) {
+                .emailInput {
+                    display: inline-block;
+                    width: 45%;
+                }
+                .formInputs {
+                    text-align: center;
+                    margin-bottom: 10px;
+                    width: 80%;
+                }
+                .successWords {
+                    width: 90%;
+                }
+                .subButton {
+                    width: 80%;
+                }
+            } @media screen and (max-width: 800px) {
+                .emailInput {
+                    display: inline-block;
+                    width: 60%;
+                }
+            } @media screen and (max-width: 500px) {
+                .emailInput {
+                    display: inline-block;
+                    width: 80%;
+                }
+                .successWords {
+                    width: 85%;
+                }
+            }
+            .hamburger { 
+                float: right;
+                margin-right: 10%;
+                margin-left: -15%;
+                top: -85px;
+                display: none;
+                z-index: 99;
+            }
+
+            .hamburger .line{
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+            display: block;
+            margin: 7px auto;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            .hamburger:hover{
+            cursor: pointer;
+            }
+
+            #hamburger-9{
+            position: relative;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            #hamburger-9.is-active{
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            }
+
+            #hamburger-9:before{
+            content: "";
+            position: absolute;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 50px;
+            height: 50px;
+            border: 3px solid transparent;
+            top: calc(50% - 25px);
+            left: calc(50% - 25px);
+            border-radius: 100%;
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            }
+
+            #hamburger-9.is-active:before{
+            border: 3px solid #000;
+            }
+
+            #hamburger-9.is-active .line{
+            width: 30px;
+            }
+
+            #hamburger-9.is-active .line:nth-child(2){
+            opacity: 0;
+            }
+
+            #hamburger-9.is-active .line:nth-child(1){
+            -webkit-transform: translateY(10px);
+            -ms-transform: translateY(10px);
+            -o-transform: translateY(10px);
+            transform: translateY(10px);
+            }
+
+            #hamburger-9.is-active .line:nth-child(3){
+            -webkit-transform: translateY(-10px) rotate(90deg);
+            -ms-transform: translateY(-10px) rotate(90deg);
+            -o-transform: translateY(-10px) rotate(90deg);
+            transform: translateY(-10px) rotate(90deg);
+            }
+
+            .mobileMenu{
+                position: fixed; 
+                display: block;
+                margin-top: -50px; 
+                margin-left: -50px; 
+                background-color: #fff; 
+                width: 0%; 
+                height: 0%; 
+                right: -50%; 
+                top: -10%; 
+                border-radius: 50%; 
+                z-index: 9;
+                transition: all .3s ease;
+                visibility: hidden;
+            }
+            .mobileMenu.expanded{
+                width: 200%; 
+                height: 150%; 
+            }
+
+            #header-logo-mobile {
+                display: none;
+            }
+
+            .mobile-card {
+                display: none;
+            }
+
+            .row {
+                padding: 50px;
+                background-color: #fff; 
+                display: flex;
+            }
+            .columnSmall {
+                flex: 35%;
+                padding: 5%;
+                margin: auto;
+                text-align: right;
+            }
+            .columnLarge {
+                flex: 65%;
+                padding: 5%;
+            }
+            .demoCard {
+                overflow: hidden;
+                filter: drop-shadow( 0px 0px 10px rgba(0, 0, 0, .2));
+                border-radius: 20px;
+                cursor: pointer;
+                width: 100%;
+            }
+
+            @media screen and (max-width: 1000px) {
+                .header-socials{
+                    visibility: hidden;
+                }
+                #header-logo {
+                    display: none;
+                }
+                #header-logo-mobile {
+                    display: block;
+                }
+                .hamburger { 
+                    display: block;
+                }
+                .mobileMenu{
+                    visibility: visible;
+                }
+                .mobile-card{
+                    display: block
+                }
+                .row{
+                    flex-wrap: wrap;
+                }
+            }
+
+            ul.features {
+                text-align: left; 
+                margin: 30px 10% 50px 10%;
+            }
+
+            ul.features > li {
+                margin-bottom: 20px;
+                padding-left: 15%;
+                margin-left: -25%;
+                list-style: none;
+                background-repeat: no-repeat;
+                background-position: left right;
+                background-size: 22px;
+                color: #fff;
+                font-family: soleil,sans-serif;
+                font-weight: 400;
+                font-size: calc(12px + 0.5vw);
+                background-image: url(static/assets/check-top.svg);
+            }
+
+            .slider {
+                width: 60%;
+                margin: 100px auto 50px auto;
+                padding: 50px auto;
+            }
+            .slick-prev:before,
+            .slick-next:before {
+                color: black;
+            }
+            .slick-slide {
+            transition: all ease-in-out .3s;
+                opacity: .2;
+            }
+            .slick-active {
+                opacity: .5;
+                transform: scale(1.05);
+            }
+            .slick-current {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            .testimonial {
+                max-width: 60%;
+                padding: 10px 10% 10px 10%; 
+                margin: 30px 10% 50px 10%; 
+                text-align: center;
+                outline: none;
+                overflow: hidden;
+            }
+            .testimonial h2 {
+                font-size: calc(15px + 0.5vw);
+            }
+            .mobile-words {
+                    display: none;
+                }
+            @media screen and (max-width: 642px) {
+                .slider{
+                    width: 80%;
+                }
+                .testimonial {
+                    max-width: 80%;        
+                    padding: 10px 5% 10px 5%; 
+                    margin: 30px 5% 50px 5%; 
+                }
+                .desktop-words {
+                    display: none;
+                }
+                .mobile-words {
+                    display: block;
+                }
+                header {
+                    height: 475px;
+                }
+            }
+
+            .scrollDown {
+                display: block;
+                margin-top: 100px;
+                float: none; 
+                margin-left: 0;
+                cursor: pointer;
+                transition: all 0.3s ease 0s;
+            }
+            .scrollDown:hover {
+                transform: scale(1.1);
+            }
+
+            .image-float{
+                transition: all 0.3s ease 0s;
+            }
+            .image-float:hover {
+                transform: scale(1.1);
+            }
+
+            br {
+                display: block;
+                margin: 20px 0;
+            }
+
+            .iframe-container{
+                position: relative;
+                width: 60%;
+                border-radius: 20px; 
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); 
+                padding-bottom: 35%; 
+                overflow: hidden;
+                height: 0;
+            }
+            .iframe-container iframe{
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .emoji {
+            padding: 3rem;
+            font-size: 4rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,.3);
+            transition: 
+                text-shadow .2s ease-in-out,
+                transform .2s ease-in-out;
+            cursor: pointer;
+            }
+
+            .emoji:hover {
+                transform: scale(1.5);
+                text-shadow: 0 20px 20px rgba(0,0,0,.3);
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <!--Header-->
+        <header>
+            <a href="/"><img class="image-float" id="header-logo" src="static/assets/logo.svg"></img></a>
+            <a href="/"><img id="header-logo-mobile" style="margin-top: -100px" src="static/assets/logo.svg"></img></a>
+            <div class="hamburger" id="hamburger-9">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <a href="https://twitter.com/FNTey" target="_blank"><img class="header-socials image-float" style="float: right; margin-right: 25%; height: 35px; margin-top: -70px;" src="static/assets/twitter.svg"></img></a>
+            <a href="https://www.linkedin.com/in/steventey/" target="_blank"><img  class="header-socials image-float" style="float: right; margin-right: 20%; height: 35px; margin-top: -70px;" src="static/assets/linkedin.svg"></img></a>
+            <a href="mailto:steven@oneword.domains"><img class="header-socials image-float" style="float: right; margin-right: 15%; height: 35px; margin-top: -70px;" src="static/assets/mail.svg"></img></a>
+            <a href="about"><img class="header-socials image-float" style="float: right; margin-right: 10%; border-radius: 50%; height: 30px; margin-top: -70px; border: 3px solid #000" src="static/assets/me.jpg"/></a>
+
+            <h1 class="desktop-words">One Word Domains</h1>
+            <h5 class="desktop-words" id="subtitles" style="margin: -25px auto 0px auto">👇 Hover over the emojis below 👇</h5>
+            <span class="emoji desktop-words" id="position">👨‍💻</span>
+            <span class="emoji desktop-words" id="duration">📅</span>
+            <span class="emoji desktop-words" id="location">🌉</span>
+
+            <h1 class="mobile-words">One Word Domains</h1>
+            <h5 class="mobile-words">
+                👨‍💻 Founder, Full Stack Developer<br>
+                📅 May 2020 - Present<br>
+                🌉 San Francisco, USA<br>
+            </h5>
+        </header>
+        <div class="mobileMenu">
+            <a href="https://twitter.com/FNTey" target="_blank"><img style="display: block; height: 50px; margin-top: 300px; margin-left: 47.5%;" src="static/assets/twitter.svg"></img></a>
+            <a href="https://www.linkedin.com/in/steventey/" target="_blank"><img style="display: block; height: 50px; margin-top: 50px; margin-left: 47.5%;" src="static/assets/linkedin.svg"></img></a>
+            <a href="mailto:steven@oneword.domains"><img style="display: block; height: 50px; margin-top: 50px; margin-left: 47.5%;" src="static/assets/mail.svg"></img></a>
+            <a href="about"><img style="display: block; height: 50px; margin-top: 50px; margin-left: 47.5%; border-radius: 50%; border: 3px solid #000" src="static/assets/me.jpg"/></a>
+        </div>
+
+        <section style="margin-top: -250px; margin-bottom: 100px">
+            <center><div style="width: 100%; margin-left: auto; margin-right: auto">
+                <img style="display: block; width: 70%; border-radius: 30px; filter: drop-shadow( 0px 0px 10px rgba(0, 0, 0, .2)); margin-bottom: 30px" src="static/assets/owd.png"/>
+                
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw); font-style: italic;">
+                    <br>This article was originally published on <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://hackernoon.com/how-a-week-long-project-took-me-to-2-on-product-hunt-and-the-front-page-of-hacker-news-2ir3y16" target="_blank">Hackernoon</a>.</br>
+                </p>
+
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>The month of May has been a fairly crazy one. It started out like any other, with me trying to come up with a decent, catchy name for my latest side project that still had an available domain name associated with it. Since it was a tech-related startup, I was considering top-level domains (TLDs) like <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.oneword.domains/available-ai-domains" target="_blank">.ai</a>, <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.oneword.domains/available-io-domains" target="_blank">.io</a>, <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.oneword.domains/available-co-domains" target="_blank">.co</a>, and <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.oneword.domains/available-com-domains" target="_blank">.com</a>.</br>
+                    <br>But then a thought struck me.</br>
+                    <br><i>"What if there was a tool that allowed me to browse through all the available domain names out there and pick the best one?"</i></br>
+                    <br>I did some Googling. And more Googling. Half an hour later, I came to the realization that such a tool...didn't exist. I know, I couldn't believe it either. The closest resource I could find was <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://dictionarydomains.io/" target="_blank">Dictionary Domains</a>, which had a list of dictionary words paired with TLDs like .ca, and .io, but most of the words were either the present continuous tense of a root word ("saying", "hiding") or paired with "-ly" suffixes ("particularly", "apparently").</br>
+                    <br>But I was looking for words that were more startup-y (if that's even a word), words like "<a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://orchard.com" target="_blank">orchard</a>", "<a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.notion.so" target="_blank">notion</a>", "<a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://getpocket.com" target="_blank">pocket</a>", "<a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://canny.io" target="_blank">canny</a>", or "<a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://bloom.co" target="_blank">bloom</a>".</br>
+                    <br>And then I thought - why not make it myself? As a data science student at <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.minerva.kgi.edu" target="_blank">Minerva</a>, I have plenty of experience <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://en.wikipedia.org/wiki/Data_wrangling" target="_blank">wrangling data</a> with Python, but I haven't yet had the chance to build something that was more applicable in real life. This would be the perfect chance for me to do so.</br>
+                    <br><i>And so the journey began.</i></br>
+                </p>
+
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">The Process</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>I set a goal for myself to build this tool in a week - partly because I didn't want to waste too much time if it didn't work out, but also because I'm a fan of hackathons and I was excited to see what I could actually build in a week.</br>
+                    <br>I started out with a blank <code>app.py</code> file on VSCode that looked a little something this:</br>
+                </p>
+                <pre style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw); margin-top: 0px; overflow: scroll; border: solid 2px #000"> 
+                    <code> 
+from flask import Flask
+
+# webapp
+app = Flask(__name__, template_folder='./')
+
+@app.route('/')
+def main():
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+                    </code>
+                </pre>
+
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>And here's a simplified version of my thought process:</br>
+                </p>
+                <ol style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <li>Find an open-source dataset that had a list of all the most commonly used words in the English language.</li>
+                    <li>Parse through those words and separate them into different categories: adjectives, nouns, verbs.</li>
+                    <li>Find a free (preferably) API that would allow me to perform bulk WHOIS checks for a list of domains to determine their availability.</li>
+                    <li>Write a script that would pair them up with the respective TLDs and run the bulk WHOIS checks.</li>
+                    <li>Get the list of available domains and visualize them using HTML, CSS, and vanilla JS.</li>
+                    <li>Launch the MVP on Product Hunt to get feedback.</li>
+                </ol>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>With this rough framework in mind, I set off on my first ever web development journey.</br>
+                </p>
+                <p style="width: 60%; text-align: left; font-size: calc(18px + 0.55vw); font-weight: 600; margin: 25px auto -30px auto">Finding the Dataset</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Finding the dataset wasn't too hard - I literally typed in "top 10000 most common English words Github" and the first <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://github.com/first20hours/google-10000-english" target="_blank">result</a> that popped up was pretty promising.</br>
+                    <br>Then, instead of using Hidden Markov Models to create a <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://nlp.stanford.edu/software/tagger.html" target="_blank">Part-Of-Speech Tagger (POS Tagger)</a> that would parse through that list and categorize the words into adjectives, verbs, and nouns, I decided to save some time and do some more Googling. By doing that, I found this wonderful <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://gist.github.com/hugsy/8910dc78d208e40de42deb29e62df913" target="_blank">repository</a> that had everything I needed.</br>
+                </p>
+
+                <p style="width: 60%; text-align: left; font-size: calc(18px + 0.55vw); font-weight: 600; margin: 25px auto -30px auto">Finding A (Free) WHOIS API</p>
+
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>This took a while to nail down. Inspired by this <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.8bitavenue.com/godaddy-domain-name-api-in-python/" target="_blank">blog post</a>, I started out by using the Godaddy API, but it turned out to give a lot of false positives - i.e. the API would say that the domain is available when it's actually not. Plus it would crash if I sent too many requests within a given timeframe, so I eventually scratched it and opted for the <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="hhttps://www.namecheap.com/support/api/methods/domains/check/" target="_blank">Namecheap API</a> instead - which could also tell us if a given domain is a Premium domain or not.</br> 
+                    <br>Here's the code I came up with:</br>
+                </p>
+                <pre style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw); margin-top: 0px; overflow: scroll; border: solid 2px #000"> 
+                    <code>
+import requests
+import time
+import xml.etree.ElementTree as ET
+
+# Namecheap API
+url = "https://api.namecheap.com/xml.response?ApiUser=[NAMECHEAP-USERNAME]ApiKey=[API-KEY]&UserName=[NAMECHEAP-USERNAME]&ClientIp=[YOUR-IP-ADDRESS]&RequestIP=[YOUR-IP-ADDRESS]&Command=namecheap.domains.check"
+
+# 40 names per chunk is the 10 below the limit of 50
+chunk_size = 40
+
+def check_available_domains(domain_list):
+
+    # Split the original array into subarrays
+    domain_chunks = []
+    for i in range(0, len(all_domains), chunk_size):
+        domain_chunks.append(all_domains[i:i + chunk_size])
+
+    # Create empty list to store available domains
+    available_domains = []
+
+    for domains in domain_chunks:
+        # Get availability and premium info by calling Namecheap API
+        response = requests.post(url, data={'DomainList': domains})
+        responseXml = ET.fromstring(response.content)
+        for domain in responseXml.iter('{http://api.namecheap.com/xml.response}DomainCheckResult'):
+            print("Domain: " + domain.attrib['Domain'], "Available: " + domain.attrib['Available'], "Premium: " + domain.attrib['IsPremiumName'])
+        print("-----------------------------------------------")
+        # API call frequency should be ~ 20 calls per minute 
+        time.sleep(5)
+                    </code>
+                </pre>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>With that code, I was able to parse through over 15,000 words and find all the available domain names for the .ai, .co, .com, and .io TLDs.</br> 
+                </p>
+
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">Building The Site</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Now comes the fun part. I've had a bit of prior experience with HTML/CSS when I was building my personal portfolio website, but I was still pretty new to full-stack development. Given my academic expertise in Python, I chose the Flask framework, which was a lightweight web framework for building out Python applications on the web.</br> 
+                    <br>In terms of UX/UI design, I decided to keep everything simple and intuitive, with an elegant visual appeal to it. I started out by using Bootstrap to create a list of the different word categories and used the <code>onclick()</code> event to trigger a JavaScript function that would show/hide the domain lists.</br>
+                </p>
+                <img style="display: block; width: 60%; border-radius: 5px;  margin: 30px auto;" src="static/assets/owd-categories.png"/>
+
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Then, instead of duplicating the HTML file 4 times for the 4 TLDs, I used Flask's <code>@app.route</code>> method as well as Python's <code>**locals()</code>> method to create 4 identical pages but with different values for each of those local namespaces.</br>
+                    <br>I also realized I needed a landing page for the site since I didn't want to use any of the TLDs as the homepage for the site. This page would have a carousel that would display the "Most Popular" and "Recently Viewed" domains, and I would hook that up to an SQLite database the backend that would track and record all of the click actions that users are making.</br>
+                    <br>I tried building the carousel from scratch but eventually caved and used this amazing carousel plugin called <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="http://kenwheeler.github.io/slick/" target="_blank">Slick</a>. Here's what I came up with:</br>
+                </p>
+                <img style="display: block; width: 60%; margin: 30px auto;" src="static/assets/carousel.gif"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Note: This is not the original MVP but the current version of the site - the original MVP didn't have the "Premium" stickers and the "More Like This". For reference, here's a screenshot of the homepage of One Word Domains in the early beginnings:</br> 
+                </p>
+                <img style="display: block; width: 60%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/beta.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Now this is probably a gross oversimplification of my build process, but it covers the gist of it - the remaining was just lots and lots of debugging and unit testing. When I was done with the MVP, I deployed it on <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://owd.herokuapp.com/" target="_blank">Heroku</a>.</br>
+                </p>
+                
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">Naming The Project</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br><i>Pretty meta, I know, naming a project that helps people name their own projects.</i></br>
+                </p>
+                <img style="display: block; width: 40%; margin: 30px auto -20px auto;" src="static/assets/mindblown.gif"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>I started out with the name "Free Domains For Me" - as in freedomainsfor.me, since Namecheap has a <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://nc.me/" target="_blank">deal</a> for university students to get a .me domain name for free. However, after putting some further thought into it, I decided against it because a) the domains on the site are not technically "free" but just "free to register" and b) I needed something that's more fitting for the niche I'm targeting - which is one-word domain names.</br>
+                    <br>And that's how <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.oneword.domains/" target="_blank">One Word Domains</a> was born.</br>
+                </p>
+
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">Product Hunt Launch</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Here's another fun part.</br>
+                    <br>Since I didn't really have an in with the domain industry, I decided to launch One Word Domains at the platform that I was the most familiar with - Product Hunt. As a first-time launcher, I was pretty nervous about launching something that I've built with tears and sweat to the world. After doing a bunch of research, I found this concise (but, on hindsight, super-effective) <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.reddit.com/r/Entrepreneur/comments/gfs7mp/how_i_made_2k_in_24_hours_on_the_launch_day/" target="_blank">Reddit guide</a> written by my good friend <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://twitter.com/ryzalyusoff" target="_blank">Ryzal</a> and decided to just roll with it.</br>
+                    <br>A few days before the launch, I did a "soft launch" on <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.indiehackers.com/post/wanted-to-learn-flask-ended-up-building-a-webapp-458f983279" target="_blank">IndieHackers</a>, where I briefly explained why I was building this and how I did it. I didn't really pay too much attention to the post but apparently it got some positive feedback, which really helped boost morale for the actual launch.</br>
+                    <br>On Launch Day, instead of launching at 00:01 SF time (which is when a launch cycle starts on Product Hunt), I decided to wait until 8 AM, which was when most of my audience was online. There was already a bunch of products on the leaderboard - some of which had over 60 upvotes - so naturally, I was a little intimidated, but I went ahead and designed a thumbnail GIF, wrote up a short brief about the project, and launched.</br>
+                </p>
+                <img style="display: block; width: 50%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/ph_launch_message.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>The next couple of hours were grueling. I started out by posting it on the various Slack groups that I was in, reaching out to people from my school that I haven't talked to in <i>years</i>>, and sending out newsletters to the 5 subscribers that I had at the time.</br>
+                    <br>This is when the comments started rolling in.</br>
+                </p>
+                <img style="display: block; width: 50%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/dave.png"/>
+                <img style="display: block; width: 50%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/max.png"/>
+                <img style="display: block; width: 50%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/nathan.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>My initial target was to get to the top 5 products of the day on Product Hunt to be featured in their daily newsletter, but One Word Domains blew up and got to <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.producthunt.com/posts/one-word-domains" target="_blank">#2 Product of The Day</a>, with over 700 upvotes, 90 comments, and 23 positive reviews.</br>
+                </p>
+                <img style="display: block; width: 60%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/ph2.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>This also drove quite a bit of traffic to the site as well, with over 6,000 users visiting the site on Launch Day itself and 3,000 more in the next couple of days after.</br>
+                </p>
+                <img style="display: block; width: 60%; margin: 30px auto;" src="static/assets/4k.png"/>
+
+                <blockquote style="width: 60%; text-align: left; font-size: calc(16px + 0.6vw); font-style: italic;">
+                    A successful Product Hunt launch can really boost your site's SEO.
+                </blockquote>
+                
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">In just two days, <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.oneword.domains/" target="_blank">One Word Domains</a> went from not ranking on any search results to ranking in the top 5 search results on Google. Oh also remember the 5 newsletter subscribers I had earlier? That number stands at 457 now.</p>
+                <img style="display: block; width: 50%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/457subs.png"/>
+
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto">Hacker News Feature</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">In the week following my Product Hunt launch, I started incorporating some feedback that I received on Launch Day. One of the biggest updates was the "synonym feature", which would allow you to find similar words of a given search term that also have available domain names.</p>
+                <img style="display: block; width: 50%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/raza.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">It took me a while to figure this one out, as I had to add child pages for each domain on One Word Domains. Thus, I was planning to postpone my Hacker News launch for another week...and that's when this happened:</p>
+                <img style="display: block; width: 60%; margin: 30px auto;" src="static/assets/122-ppl-wtf.png"/>
+
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br><i>"Whoa."</i> I thought to myself. <i>"What just happened?"</i>></br>
+                    <br>Turns out, someone went ahead and posted about One Word Domains on <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://news.ycombinator.com/item?id=23291337" target="_blank">Hacker News</a>, and it was trending on the top 10 posts. Flustered and kinda caught off-guard, I quickly wrote up a brief introduction about myself and why I built One Word Domains.</br>
+                </p>
+                <img style="display: block; width: 60%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/hn-intro.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Now the crowd on Hacker News is quite different from the one on Product Hunt - though they both mainly consist of entrepreneurs, hackers, and startup enthusiasts, the comments you get on Hacker News are no doubt more constructive and less forgiving compared to Product Hunt. So I braced myself for the worst (but was also looking forward to getting some constructive criticism).</br>
+                    <br>Surprisingly, the comments were mainly positive as well, and a few of them really helped me understand which features I should be building next. For instance, I received a lot of comments asking if there was a feature for them to list their domains on the site:</br>
+                </p>
+                <img style="display: block; width: 50%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/hn1.png"/>
+                <img style="display: block; width: 50%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/hn2.png"/>
+                <img style="display: block; width: 50%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/hn3.png"/>
+
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Taking these comments into account, I eventually built out a <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.oneword.domains/advertise" target="_blank">feature</a> for people to list their domains on One Word Domains for a nominal fee and added a "Featured Listings" section at the top of the home page.</br> 
+                </p>
+                <img style="display: block; width: 60%; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15); margin: 30px auto;" src="static/assets/featured-listings.png"/>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>The Hacker News feature drove a ton of traffic to One Word Domains. For the 5 hours that it was on the front page (check out the stats <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="http://hnrankings.info/23291337/" target="_blank">here</a>), there were constantly 100+ people on the site, and by the end of the day, I had over 8,000 new users on One Word Domains.</br>
+                </p>
+                <img style="display: block; width: 60%; margin: 30px auto;" src="static/assets/8k.png"/>
+                
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Here's a screenshot of One Word Domains when it was the #10 post on Hacker News:</br>
+                </p>
+                <img style="display: block; width: 60%; margin: 30px auto;" src="static/assets/hn10.png"/>
+
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">Takeaways</p>
+                <blockquote style="width: 60%; text-align: left; font-size: calc(16px + 0.6vw); font-style: italic;">
+                    “You can always feel when product/market fit is not happening. The customers aren't quite getting value out of the product, word of mouth isn't spreading, usage isn't growing that fast, press reviews are kind of ‘blah,’ the sales cycle takes too long, and lots of deals never close. ~ <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://pmarchive.com/guide_to_startups_part4.html" target="_blank">Marc Andreessen</a>
+                </blockquote>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>This experience, as surreal as it was, taught me a lot of important lessons:</br>
+                </p>
+                <ol style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <li>You don't "find" product-market fit. You build something that provides value to your users and let them come to you.</li>
+                    <li>The best way to find product-market fit is by building a product that you yourself want to use and sharing it with everyone else.</li>
+                    <li>If you want to launch on Product Hunt, try to be in a favorable timezone - being in Malaysia, which was GMT +8, I had to stay up till 5 AM, take a 2-hour "nap", and then continue, which on hindsight, probably wasn't too good for my health.</li>
+                </ol>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Also, if you're familiar with Python, Flask is definitely the best gateway drug into the world of web development. Trust me, I'm like a full-out addict right now, and I'm just getting started.</br>
+                </p>
+
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">Moving Forward</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>For now, I'm planning to try out a few different monetization strategies to turn One Word Domains from being just a side project into a sustainable business that could provide me with enough passive income to pay off my student loans. Aside from the affiliate programs that I have set up with Namecheap, Godaddy, and Porkbun, I'm currently trying out the following strategies:</br>
+                </p>
+                <ol style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <li><b>Featured Listings</b>: Domain investors can now list their domains on One Word Domains for a nominal one-time fee.</li>
+                    <li><b>Paywalls</b>: I've recently added support for 18 more TLDs to the site including .me, .org, .net, .tech, .so, etc. and people can pay a one-time fee to get early access to those lists.</li>
+                </ol>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>The world of domain investing might not be the hottest topic in Silicon Valley right now, but I believe the online real estate market is ripe for disruption, and I cannot wait to see where I can bring <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.oneword.domains/" target="_blank">One Word Domains</a> to in the months to come.</br>
+                </p>
+
+                <p style="width: 60%; text-align: left; font-size: calc(20px + 0.6vw); font-weight: 600; margin: 50px auto -30px auto">Update (08/08/2020)</p>
+                <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <br>Today marks exactly 3 months since I launched One Word Domains to the world. A lot has happened since then - I've received various partnership offers from some of the biggest registrars in the world, made a ton of new friends all over the world (shoutout to <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://twitter.com/eric_bae" target="_blank">Eric</a>, <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.linkedin.com/in/vicbr" target="_blank">Victor</a>, <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://twitter.com/Vinrob" target="_blank">Robin</a>, and many others, you know who you are), and grew One Word Domains to unprecedented heights. Here are some of the more notable progress updates:</br>
+                </p>
+                <ul style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
+                    <li>Added various new categories to the site - positive terms, places, tech-related terms, spanish, etc.</li>
+                    <li>Added a <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.oneword.domains/tlds" target="_blank">few more TLDs</a> to the site, including some heavily requested ones like .vc, .fyi, .co.uk, and even a domain hacks category</li>
+                    <li>Refined the filters feature on One Word Domains - users can now filter based on premium status, word length, category, and letter</li>
+                    <li>Added a <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.oneword.domains/saved-domains" target="_blank">feature</a> where people can save the domains they like and copy all of them to a</li>
+                    <li>Partnered with a few registries like <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://register.to/" target="_blank">Register.TO</a> and <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://uniregistry.com/" target="_blank">Uniregistry</a> to whitelist their TLDs on One Word Domains</li>
+                    <li>Wrote a <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.reddit.com/r/webdev/comments/hx2ltl/naming_inspirations_for_your_latest_web_projects/" target="_blank">post on Reddit</a> about One Word Domains that sort of blew up.</li>
+                    <li>Improved One Word Domain's Alexa ranking from >800K to below 200K (it's now at 174K), and even wrote a <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://twitter.com/FNTey/status/1286698732327596032" target="_blank">Twitter thread</a> about it</li>
+                </ul>
+                <hr style="width: 60%; margin: 50px auto 20px auto">
+
+                <p style="width: 60%; text-align: left; font-size: calc(18px + 0.5vw); font-weight: 600; margin: 50px auto -30px auto">Press</p>
+                <p style="width: 60%; text-align: left; font-size: calc(12.5px + 0.4vw);">
+                    <br><a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://domainnamewire.com/2020/06/15/one-word-domains-site-releases-version-2-0/" target="_blank">Domain Name Wire - One Word Domains Releases Version 2.0</a></br>
+                    <br><a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.namecheap.com/blog/how-one-word-domains-became-branding-goldmines/" target="_blank">Namecheap - How One-word Domains Became Branding Goldmines</a></br>
+                    <br><a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://domainnamewire.com/2020/05/26/one-word-domains-dnw-podcast-287/" target="_blank">Domain Name Wire Podcast (starts at 15:00)</a></br>
+                    <br><a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://morganlinton.com/two-interesting-data-points-to-look-at-when-investing-in-one-word-domain-names/" target="_blank">Morgan Linton - Two interesting data points to look at when investing in one-word domain names</a></br>
+                    <br><a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://zerotomastery.io/blog/web-developer-monthly-may-2020/" target="_blank">Zerotomastery - Free Tools For Web Developers</a></br>
+                    <br><a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.webdesignerdepot.com/2020/06/exciting-new-tools-for-designers-june-2020/" target="_blank">WebDesigner Depot - Exciting New Tools for Designers</a></br>
+                    <br><a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://domainnamewire.com/2020/05/20/new-site-shows-available-one-word-domain-names/" target="_blank">Domain Name Wire - New site shows available one-word domain names</a></br>
+                    <br><a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://dngeek.com/2020/05/whats-new-in-domaining/" target="_blank">DNGeek - What's New In Domaining</a></br>
+                    <br><a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://betalist.com/startups/one-word-domains" target="_blank">BetaList - One Word Domains</a></br>
+                    <br><a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.domainsmoke.com/08062020-expired-auctions" target="_blank">Domain Smoke Newsletter (08/06/2020)</a></br>
+                    <br><a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://hackernoon.com/how-a-week-long-project-took-me-to-2-on-product-hunt-and-the-front-page-of-hacker-news-2ir3y16" target="_blank">Hackernoon - How A Week-Long Project Took Me To #2 On Product Hunt and The Front Page of Hacker News</a></br>
+                </p>
+
+                <h2 style="font-size: calc(20px + 1.5vw); margin: 150px auto 50px auto">Join My Newsletter</h2>
+                <form class="emailInput" action="https://kgi.us17.list-manage.com/subscribe/post?u=bdb1d7b2b818bc1443dd9d193&amp;id=283a306153" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+                    <input class="formInputs" name="EMAIL" id="mce-EMAIL" type="email" required placeholder="panic@thedis.co">
+                    <button class="subButton" type="submit" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
+                    <p class="successWords">Awesome! Don't forget to check your email to confirm your subscription! 🎉</p>
+                </form>
+                <p style="width: 60%">Receive my occasional musings on tech, product and data</p>
+            </div></center>
+        </section>
+
+        <!--Footer-->
+        <footer style="background-color: #fff; text-align: center; padding-top: 50px; padding-bottom: 50px; border-top: solid 1px rgba(0, 0, 0, 0.5)">
+            <div style="justify-content: center;">
+                <a href="https://twitter.com/FNTey" target="_blank"><img class="image-float" style="display: inline-block; margin: auto 2%; height: 35px;" src="static/assets/twitter.svg"></img></a>
+                <a href="https://www.linkedin.com/in/steventey/" target="_blank"><img class="image-float" style="display: inline-block; margin: auto 2%; height: 35px;" src="static/assets/linkedin.svg"></img></a>
+                <a href="/"><img class="image-float" style="display: inline-block; margin: auto 3.5% -10px 3.5%; height: 75px;" src="static/assets/logo.svg"></img></a>
+                <a href="mailto:steven@oneword.domains"><img class="image-float" style="display: inline-block; margin: auto 2%; height: 35px;" src="static/assets/mail.svg"></img></a>
+                <a href="about"><img class="image-float" style="display: inline-block; margin: -3px 2% auto 2%; height: 30px; border-radius: 50%; border: 3px solid #000" src="static/assets/me.jpg"/></a> 
+            </div>
+        </footer>
+
+        <script>
+
+            // Hamburger Side Menu
+            $(document).ready(function(){
+                $(".hamburger").click(function(){
+                    $(this).toggleClass("is-active");
+                    $(".mobileMenu").toggleClass("expanded");
+                });
+            });
+
+            // Text Scrambler Effect
+            class TextScramble {
+                constructor(el) {
+                    this.el = el
+                    this.chars = '!<>-_\\/[]{}—=+*^?#________'
+                    this.update = this.update.bind(this)
+                }
+                setText(newText) {
+                    const oldText = this.el.innerText
+                    const length = Math.max(oldText.length, newText.length)
+                    const promise = new Promise((resolve) => this.resolve = resolve)
+                    this.queue = []
+                    for (let i = 0; i < length; i++) {
+                    const from = oldText[i] || ''
+                    const to = newText[i] || ''
+                    const start = Math.floor(Math.random() * 12)
+                    const end = start + Math.floor(Math.random() * 12)
+                    this.queue.push({ from, to, start, end })
+                    }
+                    cancelAnimationFrame(this.frameRequest)
+                    this.frame = 0
+                    this.update()
+                    return promise
+                }
+                update() {
+                    let output = ''
+                    let complete = 0
+                    for (let i = 0, n = this.queue.length; i < n; i++) {
+                    let { from, to, start, end, char } = this.queue[i]
+                    if (this.frame >= end) {
+                        complete++
+                        output += to
+                    } else if (this.frame >= start) {
+                        if (!char || Math.random() < 0.28) {
+                        char = this.randomChar()
+                        this.queue[i].char = char
+                        }
+                        output += `<span class="dud">${char}</span>`
+                    } else {
+                        output += from
+                    }
+                    }
+                    this.el.innerHTML = output
+                    if (complete === this.queue.length) {
+                    this.resolve()
+                    } else {
+                    this.frameRequest = requestAnimationFrame(this.update)
+                    this.frame++
+                    }
+                }
+                randomChar() {
+                    return this.chars[Math.floor(Math.random() * this.chars.length)]
+                }
+            }
+
+            const el = document.querySelector("#subtitles")
+            const fx = new TextScramble(el)
+
+            $("#position").hover(function(){
+                fx.setText("Founder, Full Stack Developer")
+            }, function(){
+                fx.setText("👇 Hover over the emojis below 👇")
+            })
+
+            $("#duration").hover(function(){
+                fx.setText("May 2020 - Present")
+            }, function(){
+                fx.setText("👇 Hover over the emojis below 👇")
+            })
+
+            $("#location").hover(function(){
+                fx.setText("San Francisco, USA")
+            }, function(){
+                fx.setText("👇 Hover over the emojis below 👇")
+            })
+
+            // Subscribe to Newsletter
+            const button = document.querySelector('.subButton');
+            button.addEventListener('click', event => {
+                $(".formInputs").css({"display": "none"})
+                $(".subButton").css({"display": "none"})
+                $(".successWords").css({"display": "block"})
+            });
+
+        </script>
+
+    </body>
+
+</html>
