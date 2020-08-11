@@ -531,22 +531,18 @@
                     <br>I set a goal for myself to build this tool in a week - partly because I didn't want to waste too much time if it didn't work out, but also because I'm a fan of hackathons and I was excited to see what I could actually build in a week.</br>
                     <br>I started out with a blank <code>app.py</code> file on VSCode that looked a little something this:</br>
                 </p>
-                <pre style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw); margin-top: 0px; overflow: scroll; border: solid 2px #000"> 
-                    <code> 
-from flask import Flask
+<div style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw); margin-top: 0px; overflow: scroll; border: solid 2px #000"><pre style="margin-left: 10px; line-height: 125%"><span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">flask</span> <span style="color: #008800; font-weight: bold">import</span> Flask
 
-# webapp
-app = Flask(__name__, template_folder='./')
+<span style="color: #888888"># webapp</span>
+app <span style="color: #333333">=</span> Flask(__name__, template_folder<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;./&#39;</span>)
 
-@app.route('/')
-def main():
-    return render_template('index.html')
+<span style="color: #555555; font-weight: bold">@app.route</span>(<span style="background-color: #fff0f0">&#39;/&#39;</span>)
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">main</span>():
+    <span style="color: #008800; font-weight: bold">return</span> render_template(<span style="background-color: #fff0f0">&#39;index.html&#39;</span>)
 
-if __name__ == '__main__':
-    app.run(debug=True)
-                    </code>
-                </pre>
-
+<span style="color: #008800; font-weight: bold">if</span> __name__ <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&#39;__main__&#39;</span>:
+    app<span style="color: #333333">.</span>run(debug<span style="color: #333333">=</span><span style="color: #007020">True</span>)
+</pre></div>
                 <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
                     <br>And here's a simplified version of my thought process:</br>
                 </p>
@@ -573,39 +569,37 @@ if __name__ == '__main__':
                     <br>This took a while to nail down. Inspired by this <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="https://www.8bitavenue.com/godaddy-domain-name-api-in-python/" target="_blank">blog post</a>, I started out by using the Godaddy API, but it turned out to give a lot of false positives - i.e. the API would say that the domain is available when it's actually not. Plus it would crash if I sent too many requests within a given timeframe, so I eventually scratched it and opted for the <a style="text-decoration: none; font-weight: 600; color: #000; outline: none" href="hhttps://www.namecheap.com/support/api/methods/domains/check/" target="_blank">Namecheap API</a> instead - which could also tell us if a given domain is a Premium domain or not.</br> 
                     <br>Here's the code I came up with:</br>
                 </p>
-                <pre style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw); margin-top: 0px; overflow: scroll; border: solid 2px #000"> 
-                    <code>
-import requests
-import time
-import xml.etree.ElementTree as ET
+<div style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw); margin-top: 0px; overflow: scroll; border: solid 2px #000"><pre style="margin-left: 10px; line-height: 125%"><span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">requests</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">time</span>
+<span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">xml.etree.ElementTree</span> <span style="color: #008800; font-weight: bold">as</span> <span style="color: #0e84b5; font-weight: bold">ET</span>
 
-# Namecheap API
-url = "https://api.namecheap.com/xml.response?ApiUser=[NAMECHEAP-USERNAME]ApiKey=[API-KEY]&UserName=[NAMECHEAP-USERNAME]&ClientIp=[YOUR-IP-ADDRESS]&RequestIP=[YOUR-IP-ADDRESS]&Command=namecheap.domains.check"
+<span style="color: #888888"># Namecheap API</span>
+url <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;https://api.namecheap.com/xml.response?ApiUser=[NAMECHEAP-USERNAME]ApiKey=[API-KEY]&amp;UserName=[NAMECHEAP-USERNAME]&amp;ClientIp=[YOUR-IP-ADDRESS]&amp;RequestIP=[YOUR-IP-ADDRESS]&amp;Command=namecheap.domains.check&quot;</span>
 
-# 40 names per chunk is the 10 below the limit of 50
-chunk_size = 40
+<span style="color: #888888"># 40 names per chunk is the 10 below the limit of 50</span>
+chunk_size <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">40</span>
 
-def check_available_domains(domain_list):
+<span style="color: #008800; font-weight: bold">def</span> <span style="color: #0066BB; font-weight: bold">check_available_domains</span>(domain_list):
 
-    # Split the original array into subarrays
-    domain_chunks = []
-    for i in range(0, len(all_domains), chunk_size):
-        domain_chunks.append(all_domains[i:i + chunk_size])
+    <span style="color: #888888"># Split the original array into subarrays</span>
+    domain_chunks <span style="color: #333333">=</span> []
+    <span style="color: #008800; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #007020">range</span>(<span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #007020">len</span>(all_domains), chunk_size):
+        domain_chunks<span style="color: #333333">.</span>append(all_domains[i:i <span style="color: #333333">+</span> chunk_size])
 
-    # Create empty list to store available domains
-    available_domains = []
+    <span style="color: #888888"># Create empty list to store available domains</span>
+    available_domains <span style="color: #333333">=</span> []
 
-    for domains in domain_chunks:
-        # Get availability and premium info by calling Namecheap API
-        response = requests.post(url, data={'DomainList': domains})
-        responseXml = ET.fromstring(response.content)
-        for domain in responseXml.iter('{http://api.namecheap.com/xml.response}DomainCheckResult'):
-            print("Domain: " + domain.attrib['Domain'], "Available: " + domain.attrib['Available'], "Premium: " + domain.attrib['IsPremiumName'])
-        print("-----------------------------------------------")
-        # API call frequency should be ~ 20 calls per minute 
-        time.sleep(5)
-                    </code>
-                </pre>
+    <span style="color: #008800; font-weight: bold">for</span> domains <span style="color: #000000; font-weight: bold">in</span> domain_chunks:
+        <span style="color: #888888"># Get availability and premium info by calling Namecheap API</span>
+        response <span style="color: #333333">=</span> requests<span style="color: #333333">.</span>post(url, data<span style="color: #333333">=</span>{<span style="background-color: #fff0f0">&#39;DomainList&#39;</span>: domains})
+        responseXml <span style="color: #333333">=</span> ET<span style="color: #333333">.</span>fromstring(response<span style="color: #333333">.</span>content)
+        <span style="color: #008800; font-weight: bold">for</span> domain <span style="color: #000000; font-weight: bold">in</span> responseXml<span style="color: #333333">.</span>iter(<span style="background-color: #fff0f0">&#39;{http://api.namecheap.com/xml.response}DomainCheckResult&#39;</span>):
+            <span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;Domain: &quot;</span> <span style="color: #333333">+</span> domain<span style="color: #333333">.</span>attrib[<span style="background-color: #fff0f0">&#39;Domain&#39;</span>], <span style="background-color: #fff0f0">&quot;Available: &quot;</span> <span style="color: #333333">+</span> domain<span style="color: #333333">.</span>attrib[<span style="background-color: #fff0f0">&#39;Available&#39;</span>], <span style="background-color: #fff0f0">&quot;Premium: &quot;</span> <span style="color: #333333">+</span> domain<span style="color: #333333">.</span>attrib[<span style="background-color: #fff0f0">&#39;IsPremiumName&#39;</span>])
+        <span style="color: #008800; font-weight: bold">print</span>(<span style="background-color: #fff0f0">&quot;-----------------------------------------------&quot;</span>)
+        <span style="color: #888888"># API call frequency should be ~ 20 calls per minute </span>
+        time<span style="color: #333333">.</span>sleep(<span style="color: #0000DD; font-weight: bold">5</span>)
+</pre></div>
+
                 <p style="width: 60%; text-align: left; font-size: calc(15px + 0.5vw);">
                     <br>With that code, I was able to parse through over 15,000 words and find all the available domain names for the .ai, .co, .com, and .io TLDs.</br> 
                 </p>
